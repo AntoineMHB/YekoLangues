@@ -23,5 +23,3 @@ dist-ssr
 *.sln
 *.sw?
 
-tsconfig*.json
-vite.config.ts
