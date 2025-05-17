@@ -3,6 +3,7 @@ import { useEffect } from "react";
 import { Route, Routes } from "react-router-dom";
 import Home from "./pages/HomePage";
 import CourseDetailPage from "./pages/CourseDetailPage";
+import About from "./components/About";
 
 function App() {
   useEffect(() => {

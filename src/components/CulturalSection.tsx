@@ -2,13 +2,6 @@ import React, { useEffect, useState } from "react";
 import { useInView } from "react-intersection-observer";
 import { Music, BookOpen, RefreshCw } from "lucide-react";
 
-// interface Proverb {
-//   id: number;
-//   original: string;
-//   translation: string;
-//   meaning: string;
-// }
-
 interface Proverb {
   lingala: string;
   french: string;
@@ -25,29 +18,6 @@ const CulturalSection: React.FC = () => {
   const [proverbs, setProverbs] = useState<Proverb[]>([]);
   const [currentProverb, setCurrentProverb] = useState(0);
 
-  // const proverbs: Proverb[] = [
-  //   {
-  //     id: 1,
-  //     original: "Mboka na mboka, bizaleli na yango.",
-  //     translation: "À chaque pays ses coutumes.",
-  //     meaning:
-  //       "Ce proverbe souligne l'importance de respecter les différences culturelles et les traditions de chaque région ou communauté.",
-  //   },
-  //   {
-  //     id: 2,
-  //     original: "Moto moko akoki kobongisa libongo te.",
-  //     translation: "Une seule personne ne peut arranger la berge.",
-  //     meaning:
-  //       "Similaire au proverbe 'L'union fait la force', il met en avant l'importance du travail d'équipe et de la solidarité dans la communauté.",
-  //   },
-  //   {
-  //     id: 3,
-  //     original: "Libenga ya mokongo ezalaka na ndenge na yango.",
-  //     translation: "La houe a sa façon de creuser.",
-  //     meaning:
-  //       "Chacun a sa propre méthode ou approche pour accomplir une tâche. Ce proverbe encourage le respect des différentes façons de faire.",
-  //   },
-  // ];
 
   useEffect(() => {
     fetch("/src/data/lingala_proverbs.json")
