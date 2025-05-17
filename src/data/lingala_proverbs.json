@@ -1,0 +1,388 @@
+[
+    {
+      "lingala": "Toyaki mboka mboka.",
+      "french": "Chacun est venu de son village.",
+      "moral": "Il faut éviter de se comparer à quelqu'un."
+    },
+    {
+      "lingala": "Mokokoli ya manga ekawuki, banzinzi bakimi.",
+      "french": "Le noyau de la mangue devenu sec, les mouches se sont enfuies.",
+      "moral": "Les profiteurs s'enfuient lorsqu'il n'y a plus d'intérêts."
+    },
+    {
+      "lingala": "Libaku na zelo.",
+      "french": "Trébucher sur le sable.",
+      "moral": "Recevoir un bien inattendu."
+    },
+    {
+      "lingala": "Akutani na chance ya makaku.",
+      "french": "Il a rencontré la faveur du singe.",
+      "moral": "Un opportuniste qui mange des fruits qu'il n'a pas semé."
+    },
+    {
+      "lingala": "Mbongo eza na suka te.",
+      "french": "L'argent n'a point de fin.",
+      "moral": "Il faut éviter de courir avidement derrière l'argent."
+    },
+    {
+      "lingala": "Moto asalaka mosala ya nguba batalaka ye na monoko te.",
+      "french": "On ne regarde pas à la bouche de celui qui décortique les arachides.",
+      "moral": "L'ouvrier mérite son salaire - Matthieu 10:10."
+    },
+    {
+      "lingala": "Monoko ya mpaka elumbaka solo, kasi ebimisaka maloba kitoko.",
+      "french": "La bouche du vieillard sent, mais elle fait sortir de belles paroles.",
+      "moral": "Ne point refuser les sages conseils des ainés."
+    },
+    {
+      "lingala": "Mwana oyo azali na mokongo ya mama abetaka libaku ata mokolo moke te.",
+      "french": "L'enfant qui est sur le dos de la maman ne trébuche pas même un seul jour.",
+      "moral": "Se trouver dans un bon environnement permet d'être en sécurité."
+    },
+    {
+      "lingala": "Mokili ekendaka liboso, kasi ezongaka sima te.",
+      "french": "Le monde avance, mais ne recule pas.",
+      "moral": "Mettre en valeur chaque instant de votre vie."
+    },
+    {
+      "lingala": "Natali likolo mpe na nse.",
+      "french": "J'ai regardé le ciel et la terre.",
+      "moral": "Lorsqu'on perd espoir, on lève les yeux et on regardes en bas."
+    },
+    {
+      "lingala": "Mbwa ataka singa.",
+      "french": "Un chien qui a coupé la corde.",
+      "moral": "Se dit d'une personne rebelle à toute autorité."
+    },
+    {
+      "lingala": "Mobange ya ndeke emonanaka na mikuwa.",
+      "french": "La vieillesse de l'oiseau se voit par ses os.",
+      "moral": "On peut croire qu'une personne est jeune, mais elle ne fait pas son âge."
+    },
+    {
+      "lingala": "Komona mutakala ya koba.",
+      "french": "Voir la nudité de la tortue.",
+      "moral": "C'est-à-dire la personne verra ce à quoi il ne s'attendait pas à voir."
+    },
+    {
+      "lingala": "Tosa obika.",
+      "french": "Obéis pour être sauvé.",
+      "moral": "L'obéissance est nécessaire pour prospérer."
+    },
+    {
+      "lingala": "Moke nde nzoto.",
+      "french": "C'est le corps qui est petit.",
+      "moral": "Ne jamais mépriser les personnes petites."
+    },
+    {
+      "lingala": "Payi-payi ekweyaka na nzete yango moko te.",
+      "french": "La papaye ne tombe pas d'elle seule de l'arbre",
+      "moral": "Pour récolter il faut travailler."
+    },
+    {
+      "lingala": "Zoba liboso, mayele sima.",
+      "french": "Ignorant d'abord, sage ensuite",
+      "moral": "L'erreur du passé rend sage pour l'avenir."
+    },
+    {
+      "lingala": "Likambo ya bana na bana, baboti bakotaka te.",
+      "french": "Les parents ne s'immiscent pas dans les conflits entre les enfants",
+      "moral": "Les adultes doivent de se mêler de petits conflits d'enfants, de peur que ça ne dégénère."
+    },
+    {
+      "lingala": "Oyo amoni liboso apesa sango.",
+      "french": "Qui voit en premier doit porter la nouvelle",
+      "moral": "La vigilance en collectivité est une affaire."
+    },
+    {
+      "lingala": "Mbeli na yo ata ezokisi yo okobwaka yango te.",
+      "french": "Même si tu te coupes avec ton couteau, tu ne le jetteras pas",
+      "moral": "Apprendre la longanimité."
+    },
+    {
+      "lingala": "Soki ozolamaba na bakoni, kolongola oyo ezobimisa milinga te!",
+      "french": "Lorsque tu prépares avec du bois, n'enlève pas le tison qui fume.",
+      "moral": "A force d'écarter les personnes \"imparfaites\", on risque de se retrouver seul, et inopérationnel."
+    },
+    {
+      "lingala": "Singa ya famille ata ekondi ekanata te!",
+      "french": "Même si la corde familiale rétrécit, elle ne se rompt pas",
+      "moral": "Rester unie en famille, en dépit des dissensions."
+    },
+    {
+      "lingala": "Soki ndeke afingi nzete akolala wapi?",
+      "french": "Si l'oiseau insulte l'arbre où dormira-t-il?",
+      "moral": "Attention à l'ingratitude."
+    },
+    {
+      "lingala": "Zala na mbongo mpe zala na batu.",
+      "french": "Aie de l'argent et des hommes.",
+      "moral": "Les personnes sont aussi utiles que l'argent."
+    },
+  
+    {
+      "lingala": "Basi batongaka mboka te.",
+      "french": "Les femmes ne bâtissent pas un pays.",
+      "moral": "Les dames devraient prouver le contraire en réussissant des projets."
+    },
+    {
+      "lingala": "Moyibi alingaka te bayiba ye.",
+      "french": "Le voleur n'aime pas être volé.",
+      "moral": "Ça fait mal de subir le tort que l'on fait aux autres."
+    },
+    {
+      "lingala": "Mbula ya sika, makambo ya sika.",
+      "french": "Nouvelle année, choses nouvelles.",
+      "moral": "Chaque changement d'année implique des résolutions nouvelles."
+    },
+    {
+      "lingala": "Moto amemi maki abundaka te.",
+      "french": "Celui qui transporte des œufs ne se bagarre pas.",
+      "moral": "Quand on possède un bien précieux, on évite de se ridiculiser au risque de tout perdre."
+    },
+    {
+      "lingala": "Babambaka libanga se na manga ya kotela.",
+      "french": "On ne jette la pierre que sur une mangue mûre.",
+      "moral": "Si on lance des critiques vers une personne, c'est souvent par envie."
+    },
+    {
+      "lingala": "Lilala moko ya kopola epolisaka malala monso.",
+      "french": "Une orange pourrie fait pourrir toutes les oranges.",
+      "moral": "Il faut faire attention aux mauvaises compagnies."
+    },
+    {
+      "lingala": "Nzete etengama ba bongisaka yango lisusu te.",
+      "french": "Un arbre courbé on ne le répare plus.",
+      "moral": "C'est dès le bas âge qu'il faut corriger les erreurs de l'enfant."
+    },
+    {
+      "lingala": "Mama abotaka mwana, kasi motema ya mwana te.",
+      "french": "Une maman enfante d'un enfant, mais pas de son cœur.",
+      "moral": "Avoir un bon cœur ou un mauvais est de la responsabilité de chacun."
+    },
+    {
+      "lingala": "Nzinzi atelemaka esika nionso, kasi na moto te.",
+      "french": "La mouche se pose partout, mais jamais sur le feu.",
+      "moral": "On ne blague pas avec le feu."
+    },
+    {
+      "lingala": "Sapato ata ko etengama, lokolo ekoboya te.",
+      "french": "La chaussure même si elle est tordue, le pied ne la refusera pas.",
+      "moral": "Savoir accepter les défauts des autres."
+    },
+    {
+      "lingala": "Masuwa ekendaka libongo etikalaka.",
+      "french": "Un bateau part, mais le port reste.",
+      "moral": "Après une séparation la vie continue."
+    },
+    {
+      "lingala": "Libumu ya pulu-pulu ebangaka butu te.",
+      "french": "Le ventre qui a la diarrhée n'a pas peur de la nuit.",
+      "moral": "Lorsqu'on a un besoin pressant, on surmonte sa peur de l'obscurité."
+    },
+    {
+      "lingala": "Soki omoni na mboka moko bato bazo bina lokolo moko, yo pe bina lokolo moko.",
+      "french": "Si tu vois dans un pays les habitants danser d'un seul pied, toi de même danse d'un seul pied.",
+      "moral": "C'est une bonne chose de s'adapter à son d'accueil."
+    },
+    {
+      "lingala": "Matoyi elekaka moto te.",
+      "french": "Les oreilles ne dépassent pas la tête.",
+      "moral": "Se dit pour les jeunes qui se croient plus futés que les ainés."
+    },
+    {
+      "lingala": "Mayi ekufela mbwa, bapaya nde bamelaka.",
+      "french": "L'eau dans laquelle s'est noyé un chien est bue par les étrangers.",
+      "moral": "Les ignorants sont souvent victimes de leur manque de connaissance."
+    },
+    {
+      "lingala": "Ndeke azalaka na mabele te, kasi abokolaka bana na ye.",
+      "french": "L'oiseau n'a pas de mamelles, mais elle élève ses petits.",
+      "moral": "On peut y arriver avec de la bonne volonté."
+    },
+    {
+      "lingala": "Libanga ezui tshaku momo koseka te, po bino monso boza ba ndeke.",
+      "french": "La pierre a heurté le perroquet, moineau ne rigole pas, car vous êtes tous des oiseaux.",
+      "moral": "Ne pas se moquer des malheurs d'un autre être humain, puisque cela peut arriver à toute personne."
+    },
+    {
+      "lingala": "Mayi eninganaka pamba te.",
+      "french": "L'eau ne bouge pas sans raison.",
+      "moral": "Il y a souvent une cause cachée derrière un événement."
+    },
+    {
+      "lingala": "Banga makambo, makambo ekobanga yo.",
+      "french": "Aie peur des problèmes, et les problèmes auront peur de toi.",
+      "moral": "Éviter de se créer des ennuis pour vivre en paix."
+    },
+    {
+      "lingala": "Moto oyo aleyi mbila, ye nde esengeli asanza mafuta.",
+      "french": "Celui qui a mangé les noix de palme, c'est à lui de vomir de l'huile.",
+      "moral": "À chacun d'assumer ses responsabilités."
+    },
+    {
+      "lingala": "Soki ozolanda moto ya liboma azali bolumbu, yo moko esengeli olata bilamba, soki olongoli bilamba bakozua yo mpe lokola moto ya liboma.",
+      "french": "Si tu suis un fou qui est nu, toi-même il faut mettre des habits, si tu enlèves les habits on va te prendre aussi pour un fou.",
+      "moral": "Éviter suivre l'insensé dans sa folie."
+    },
+    {
+      "lingala": "Esika okoma te, mapata ekweya.",
+      "french": "Là où tu n'es pas arrivé, les nuages sont tombés.",
+      "moral": "On se fait souvent des illusions sur ce qu'on voit de loin. On pense que là-bas le ciel touche la terre."
+    },
+    {
+      "lingala": "Liseki na nyoka, ebandeli ekosua.",
+      "french": "La plaisanterie avec un serpent, au commencement il mord.",
+      "moral": "Il y a des choses avec lesquelles on ne plaisante pas, afin de ne pas s'en mordre les doigts."
+    },
+    {
+      "lingala": "Komelisa muana ya moninga libele na se ya pongi, tango akolamuka akotuna mama na ye.",
+      "french": "On peut allaiter l'enfant d'une autre pendant son sommeil, mais à son réveil il réclamera sa maman.",
+      "moral": "Ne pas tromper la vigilance d'une personne, car à son réveil elle découvrira le mensonge."
+    },
+    {
+      "lingala": "Nzungu ya kala babuakaka te, po mokolo mosusu okoki kokalangela yango nguba.",
+      "french": "On ne jette pas la vieille marmite, car un jour on peut y faire cuire des arachides.",
+      "moral": "Les choses usagées peuvent trouver une nouvelle utilisation."
+    },
+    {
+      "lingala": "Mokili ezali mbanga ya ntaba.",
+      "french": "Le monde est une mâchoire de la chèvre.",
+      "moral": "Le monde va à gauche et à droite, à chacun son tour."
+    },
+    {
+      "lingala": "Keba na esika ya kobuaka mposo ya etabe na yo, ekoki kokweisa yo moko.",
+      "french": "Fais attention où tu jettes ta peau de banane, de peur qu'elle ne te fasse tomber.",
+      "moral": "On récolte les conséquences de sa mauvaise foi."
+    },
+    {
+      "lingala": "Muana moke abetaka mbonda, bakolo mpe babinaka.",
+      "french": "Un enfant peut battre le tam-tam et faire danser les grands.",
+      "moral": "Le talent ne dépend pas de l'âge."
+    },
+    {
+      "lingala": "Mbisi alandaka esika mayi ezo tshola.",
+      "french": "Le poisson suit le courant d'eau.",
+      "moral": "L'homme va là où il y a de l'intérêt."
+    },
+    {
+      "lingala": "Soso amelaka mbuma ekoki na mongongo na ye.",
+      "french": "La poule n'avale que le grain qui peut passer dans sa gorge.",
+      "moral": "Éviter l'avidité qui mène à la gourmandise."
+    },
+    {
+      "lingala": "Bamekaka mojindo ya mayi na mosapi te.",
+      "french": "Ce n'est pas avec un doigt qu'on mesure la profondeur de l'eau.",
+      "moral": "Il ne faut pas prendre les choses à la légère."
+    },
+    {
+      "lingala": "Bakimaka mbula na mopepe te.",
+      "french": "On ne s'abrite pas de la pluie, juste à cause du vent.",
+      "moral": "Trop de bruit pour rien."
+    },
+    {
+      "lingala": "Mosapi moko esokolaka elongi te.",
+      "french": "On se lave pas le visage avec un seul doigt.",
+      "moral": "L'union fait la force."
+    },
+    {
+      "lingala": "Koni moko etokisaka nzungu te.",
+      "french": "Un seul morceau de bois ne peut faire bouillir une marmite.",
+      "moral": "Plusieurs talents contribuent à la réussite."
+    },
+    {
+      "lingala": "Mayi esopani bakoki kolokota te.",
+      "french": "L'eau qui est renversée par terre ne peut pas être ramassée.",
+      "moral": "Il y a des erreurs qui sont irrattrapables."
+    },
+    {
+      "lingala": "Nzoko alembaka mimo na ye te.",
+      "french": "L'éléphant ne se laisse pas de porter ses ivoires.",
+      "moral": "Accepter de supporter ses lourdes responsabilités."
+    },
+    {
+      "lingala": "Balia ngando basepela, mokolo ngando aliaki moko ekomaki kolela.",
+      "french": "Ils étaient contents de manger du crocodile, mais quand un crocodile mangea un homme, ce fut des pleurs.",
+      "moral": "Éviter de faire du tort à autrui, car c'est moins rigolo quand on devient la victime."
+    },
+    {
+      "lingala": "Ngomba na ngomba ekutanaka te, kasi moto na moto bakutanaka.",
+      "french": "Deux montagnes ne peuvent se croiser, deux personnes se rencontrent.",
+      "moral": "On croise souvent des personnes qu'on veut éviter."
+    },
+    {
+      "lingala": "Ntaba aliaka se na molayi ya singa.",
+      "french": "La chèvre ne broute que selon la longueur de la corde.",
+      "moral": "On ne doit pas vivre au-delà de ses possibilités."
+    },
+    {
+      "lingala": "Kolela ya mbisi na kati ya mayi emonanaka te.",
+      "french": "Les larmes du poisson qui pleure dans l'eau ne se voient pas.",
+      "moral": "Il y a des chagrins qu'on ne peut exprimer."
+    },
+    {
+      "lingala": "Nzete ata ewumeli na mayi ekobongwana ngando te.",
+      "french": "Un tronc d'arbre a beau rester dans l'eau, il ne deviendra jamais un crocodile.",
+      "moral": "S'efforcer à être ce qu'on n'est pas mène à l'échec."
+    },
+    {
+      "lingala": "Muselekete alekaki ndako na ye likola ya kokima mbango.",
+      "french": "À cause de la précipitation, le lézard dépassa sa maison.",
+      "moral": "En étant trop pressé, on oublie même ce qu'on ne peut oublier."
+    },
+    {
+      "lingala": "Ebembe ya nyoka esilaka somo te.",
+      "french": "Le cadavre du serpent reste effrayant.",
+      "moral": "Même quand on a perdu ses moyens, la renommée demeure."
+    },
+    {
+      "lingala": "Mbwa azalaka na makolo mineyi, kasi alandaka nzela se moko.",
+      "french": "Le chien a quatre pattes, mais il ne suit qu'un seul chemin.",
+      "moral": "Éviter de mener une double vie."
+    },
+    {
+      "lingala": "Esengeli kolala mpongi ya nguma.",
+      "french": "Il faut dormir comme un boa.",
+      "moral": "Rester éveillé comme le boa qui dort les yeux ouverts."
+    },
+    {
+      "lingala": "Mayi ya moto etumbaka elamba te.",
+      "french": "L'eau chaude ne peut brûler un habit.",
+      "moral": "Il ne faut pas craindre les intimidations."
+    },
+    {
+      "lingala": "Liboke ya moninga basombelaka yango kwanga te.",
+      "french": "On n'achète pas un accompagnement pour manger le repas d'autrui.",
+      "moral": "Ne jamais faire des projets sur ce qui ne t'appartient pas."
+    },
+    {
+      "lingala": "Masoko ya nzungu ebangaka moto te.",
+      "french": "Le dessous de la marmite ne craind pas le feu.",
+      "moral": "Quand on a de l'assurance, on ne craint pas l'épreuve."
+    },
+    {
+      "lingala": "Tshaku abotoka na bohumbu te.",
+      "french": "Le perroquet ne se reproduit pas en captivité.",
+      "moral": "Il y a des situations peu propices à la prospérité."
+    },
+    {
+      "lingala": "Zela zela mokomboso azanga mokila.",
+      "french": "À force d'attendre le gorille ne reçut pas une queue.",
+      "moral": "Le manque de diligence fait manquer les choses essentielles."
+    },
+    {
+      "lingala": "Soki omoni ndoki belela, noki mongongo ekawuka.",
+      "french": "Si tu vois un sorcier, crie avant que ta voix ne sèche.",
+      "moral": "Une réaction rapide permet d'éviter le pire."
+    },
+    {
+      "lingala": "Mobuki lokuta ye na ndoki moto moko.",
+      "french": "Le menteur et le sorcier sont comparables.",
+      "moral": "Il n'y a pas de grands et petits vices."
+    },
+    {
+      "lingala": "Na zando ya ba soso, mpese atulaka te.",
+      "french": "Au marché des poules, le cancrelat ne manque pas d'acheteur.",
+      "moral": "Chacun a un lieu où sa valeur est estimée."
+    }
+  ]

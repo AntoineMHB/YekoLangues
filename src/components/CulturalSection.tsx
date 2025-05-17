@@ -1,12 +1,18 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useInView } from "react-intersection-observer";
 import { Music, BookOpen, RefreshCw } from "lucide-react";
 
+// interface Proverb {
+//   id: number;
+//   original: string;
+//   translation: string;
+//   meaning: string;
+// }
+
 interface Proverb {
-  id: number;
-  original: string;
-  translation: string;
-  meaning: string;
+  lingala: string;
+  french: string;
+  moral: string;
 }
 
 const CulturalSection: React.FC = () => {
@@ -15,31 +21,55 @@ const CulturalSection: React.FC = () => {
     threshold: 0.1,
   });
 
+
+  const [proverbs, setProverbs] = useState<Proverb[]>([]);
   const [currentProverb, setCurrentProverb] = useState(0);
 
-  const proverbs: Proverb[] = [
-    {
-      id: 1,
-      original: "Mboka na mboka, bizaleli na yango.",
-      translation: "À chaque pays ses coutumes.",
-      meaning:
-        "Ce proverbe souligne l'importance de respecter les différences culturelles et les traditions de chaque région ou communauté.",
-    },
-    {
-      id: 2,
-      original: "Moto moko akoki kobongisa libongo te.",
-      translation: "Une seule personne ne peut arranger la berge.",
-      meaning:
-        "Similaire au proverbe 'L'union fait la force', il met en avant l'importance du travail d'équipe et de la solidarité dans la communauté.",
-    },
-    {
-      id: 3,
-      original: "Libenga ya mokongo ezalaka na ndenge na yango.",
-      translation: "La houe a sa façon de creuser.",
-      meaning:
-        "Chacun a sa propre méthode ou approche pour accomplir une tâche. Ce proverbe encourage le respect des différentes façons de faire.",
-    },
-  ];
+  // const proverbs: Proverb[] = [
+  //   {
+  //     id: 1,
+  //     original: "Mboka na mboka, bizaleli na yango.",
+  //     translation: "À chaque pays ses coutumes.",
+  //     meaning:
+  //       "Ce proverbe souligne l'importance de respecter les différences culturelles et les traditions de chaque région ou communauté.",
+  //   },
+  //   {
+  //     id: 2,
+  //     original: "Moto moko akoki kobongisa libongo te.",
+  //     translation: "Une seule personne ne peut arranger la berge.",
+  //     meaning:
+  //       "Similaire au proverbe 'L'union fait la force', il met en avant l'importance du travail d'équipe et de la solidarité dans la communauté.",
+  //   },
+  //   {
+  //     id: 3,
+  //     original: "Libenga ya mokongo ezalaka na ndenge na yango.",
+  //     translation: "La houe a sa façon de creuser.",
+  //     meaning:
+  //       "Chacun a sa propre méthode ou approche pour accomplir une tâche. Ce proverbe encourage le respect des différentes façons de faire.",
+  //   },
+  // ];
+
+  useEffect(() => {
+    fetch("/src/data/lingala_proverbs.json")
+      .then((res) => res.json())
+      .then((data) => {
+        setProverbs(data);
+      })
+      .catch((error) => {
+        console.error("Failed to load proverbs:", error);
+      });
+  }, []);
+
+  // Auto rotateproverbs every 5 seconds
+  useEffect(() => {
+    if (proverbs.length === 0) return;
+
+    const interval = setInterval(() => {
+      setCurrentProverb((prev) => (prev + 1) % proverbs.length);
+    }, 5000); // every 5 seconds
+
+    return () => clearInterval(interval); // Clean up
+  }, [proverbs]);
 
   const songs = [
     {
@@ -97,18 +127,22 @@ const CulturalSection: React.FC = () => {
                 <RefreshCw size={16} />
               </button>
 
-              <div className="mb-4">
-                <h3 className="text-xl font-bold mb-2 text-accent-300">
-                  {proverbs[currentProverb].original}
-                </h3>
-                <p className="text-lg italic mb-4">
-                  {proverbs[currentProverb].translation}
-                </p>
-                <div className="h-px bg-white bg-opacity-20 my-4"></div>
-                <p className="text-gray-200">
-                  {proverbs[currentProverb].meaning}
-                </p>
-              </div>
+              {proverbs.length > 0 ? (
+                    <div className="mb-4">
+                    <h3 className="text-xl font-bold mb-2 text-accent-300">
+                      {proverbs[currentProverb].lingala}
+                    </h3>
+                    <p className="text-lg italic mb-4">
+                      {proverbs[currentProverb].french}
+                    </p>
+                    <div className="h-px bg-white bg-opacity-20 my-4"></div>
+                    <p className="text-gray-200">
+                      {proverbs[currentProverb].moral}
+                    </p>
+                  </div>
+              ) : (
+                <p>Chargement des proverbes...</p>
+              )}
 
               <div className="flex justify-center mt-4">
                 {proverbs.map((_, index) => (
