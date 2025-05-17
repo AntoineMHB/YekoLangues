@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from 'react';
-import { Link } from 'react-scroll';
-import { Menu, X } from 'lucide-react';
-import Logo from '../assets/logo';
+import React, { useState, useEffect } from "react";
+import { Link } from "react-scroll";
+import { Menu, X } from "lucide-react";
+import Logo from "../assets/logo";
 
 const Navbar: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -16,28 +16,28 @@ const Navbar: React.FC = () => {
       setIsScrolled(window.scrollY > 50);
     };
 
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
     return () => {
-      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener("scroll", handleScroll);
     };
   }, []);
 
   const navLinks = [
-    { name: 'Accueil', to: 'home' },
-    { name: 'À propos', to: 'about' },
-    { name: 'Nos cours', to: 'courses' },
-    { name: 'Pourquoi nous', to: 'why-us' },
-    { name: 'Témoignages', to: 'testimonials' },
-    { name: 'FAQ', to: 'faq' },
-    { name: 'Contact', to: 'contact' },
+    { name: "Accueil", to: "home" },
+    { name: "À propos", to: "about" },
+    { name: "Nos cours", to: "courses" },
+    { name: "Pourquoi nous", to: "why-us" },
+    { name: "Témoignages", to: "testimonials" },
+    { name: "FAQ", to: "faq" },
+    { name: "Contact", to: "contact" },
   ];
 
   return (
     <nav
       className={`fixed w-full z-50 transition-all duration-300 ${
         isScrolled
-          ? 'bg-white shadow-md py-2'
-          : 'bg-transparent py-4'
+          ? "bg-white text-gray-400 shadow-md py-2"
+          : "bg-transparent text-gray-300 py-4"
       }`}
     >
       <div className="container flex justify-between items-center">
@@ -70,7 +70,7 @@ const Navbar: React.FC = () => {
             smooth={true}
             offset={-70}
             duration={500}
-            className="btn btn-primary"
+            className="btn btn-primary cursor-pointer"
           >
             Commencer l'apprentissage
           </Link>

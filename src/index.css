@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Poppins:wght@300;400;500;600&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Poppins:wght@300;400;500;600&display=swap");
 
 @tailwind base;
 @tailwind components;
@@ -8,12 +8,17 @@
   html {
     @apply scroll-smooth;
   }
-  
+
   body {
     @apply font-poppins text-gray-800 bg-gray-50;
   }
-  
-  h1, h2, h3, h4, h5, h6 {
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
     @apply font-montserrat font-bold;
   }
 }
@@ -22,47 +27,47 @@
   .container {
     @apply px-4 mx-auto max-w-7xl;
   }
-  
+
   .section {
     @apply py-16 md:py-24;
   }
-  
+
   .section-title {
     @apply text-3xl md:text-4xl font-bold mb-4 text-gray-800;
   }
-  
+
   .section-subtitle {
     @apply text-xl text-gray-600 mb-12 max-w-3xl mx-auto;
   }
-  
+
   .btn {
     @apply inline-flex items-center justify-center px-6 py-3 rounded-lg font-medium transition-all duration-300 text-center;
   }
-  
+
   .btn-primary {
     @apply bg-primary-500 text-white hover:bg-primary-600 focus:ring-4 focus:ring-primary-300;
   }
-  
+
   .btn-secondary {
     @apply bg-secondary-500 text-white hover:bg-secondary-600 focus:ring-4 focus:ring-secondary-300;
   }
-  
+
   .btn-outline {
     @apply border-2 border-primary-500 text-primary-500 hover:bg-primary-50 focus:ring-4 focus:ring-primary-100;
   }
-  
+
   .card {
     @apply bg-white rounded-xl shadow-md overflow-hidden transition-all duration-300 hover:shadow-lg;
   }
-  
+
   .input {
     @apply w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-400 focus:border-transparent;
   }
-  
+
   .nav-link {
-    @apply px-4 py-2 text-gray-700 hover:text-primary-500 transition-colors duration-300;
+    @apply px-4 py-2 hover:text-primary-500 transition-colors duration-300;
   }
-  
+
   .nav-link.active {
     @apply text-primary-500 font-medium;
   }
