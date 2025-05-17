@@ -56,6 +56,7 @@ const Courses: React.FC = () => {
         >
           {courseData.map((course) => (
             <CourseCard
+              id={course.id}
               key={course.id}
               title={course.title}
               level={course.level}

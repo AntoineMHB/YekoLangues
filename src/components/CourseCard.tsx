@@ -1,7 +1,9 @@
 import React from "react";
 import { BookOpen } from "lucide-react";
+import { Link } from "react-router-dom";
 
 interface CourseCardProps {
+  id: number;
   title: string;
   level: string;
   description: string;
@@ -10,6 +12,7 @@ interface CourseCardProps {
 }
 
 const CourseCard: React.FC<CourseCardProps> = ({
+  id,
   title,
   level,
   description,
@@ -57,7 +60,9 @@ const CourseCard: React.FC<CourseCardProps> = ({
 
         <p className="text-gray-600 mb-6 text-ellipsis h-32">{description}</p>
 
-        <button className="mt-6 btn btn-outline w-full">En savoir plus</button>
+        <Link to={`/courses/${id}`} className="mt-6 btn btn-outline w-full">
+          En savoir plus
+        </Link>
       </div>
     </div>
   );
