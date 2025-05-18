@@ -1,6 +1,6 @@
 import React from "react";
 import { BookOpen } from "lucide-react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 interface CourseCardProps {
   id: number;
@@ -19,6 +19,7 @@ const CourseCard: React.FC<CourseCardProps> = ({
   image,
   color,
 }) => {
+  const navigate = useNavigate();
   let colorClasses = "";
 
   switch (color) {
@@ -36,7 +37,10 @@ const CourseCard: React.FC<CourseCardProps> = ({
   }
 
   return (
-    <div className="card h-full group shadow-xl">
+    <div
+      className="card h-full group shadow-xl cursor-pointer"
+      onClick={() => navigate(`/courses/${id}`)}
+    >
       <div
         className={`relative h-48 overflow-hidden bg-gradient-to-r ${colorClasses}`}
       >

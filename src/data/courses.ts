@@ -1,6 +1,9 @@
 import beginnerImage from "../assets/beginner.png";
 import intermediateImage from "../assets/intermediate.png";
 import advancedImage from "../assets/advanced.png";
+import beginnerCoach from "../assets/coach-1.jpeg";
+import intermediateCoach from "../assets/coach-2.jpeg";
+import advancedCoach from "../assets/coach-3.png";
 
 export const courses = [
   {
@@ -11,6 +14,11 @@ export const courses = [
       "Les fondations du lingala. Ce cours est idéal pour ceux qui n'ont aucune connaissance préalable de la langue. Vous apprendrez les bases de la grammaire, du vocabulaire essentiel et de la prononciation.",
     image: beginnerImage,
     color: "primary",
+    coach: {
+      image: beginnerCoach,
+      firstName: "Jeanine",
+      lastName: "Mabunda",
+    },
   },
   {
     id: 2,
@@ -20,6 +28,11 @@ export const courses = [
       "Développez votre aisance. Si vous avez déjà quelques notions de lingala, ce niveau vous permettra d'enrichir votre vocabulaire, de maîtriser des structures grammaticales plus complexes.",
     image: intermediateImage,
     color: "secondary",
+    coach: {
+      image: intermediateCoach,
+      firstName: "Jeanine",
+      lastName: "Mabunda",
+    },
   },
   {
     id: 3,
@@ -29,5 +42,10 @@ export const courses = [
       "Maîtrisez la nuance et la culture. Ce cours est conçu pour ceux qui souhaitent perfectionner leur lingala, comprendre les subtilités de la langue et explorer des aspects culturels.",
     image: advancedImage,
     color: "accent",
+    coach: {
+      image: advancedCoach,
+      firstName: "Jeanine",
+      lastName: "Mabunda",
+    },
   },
 ];

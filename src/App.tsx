@@ -1,11 +1,12 @@
 import { useEffect } from "react";
-
+import { useLocation } from "react-router-dom";
 import { Route, Routes } from "react-router-dom";
 import Home from "./pages/HomePage";
 import CourseDetailPage from "./pages/CourseDetailPage";
-import About from "./components/About";
 
 function App() {
+  const location = useLocation();
+
   useEffect(() => {
     // Update page title
     document.title = "YekoLangue - Parlez la langue, vivez la culture!";
@@ -34,10 +35,29 @@ function App() {
     window.addEventListener("scroll", handleScroll);
     handleScroll(); // Check once on load
 
+    // Handle scroll to section from navigation
+    if (
+      location.pathname === "/" &&
+      location.state &&
+      location.state.scrollToSection
+    ) {
+      const sectionId = location.state.scrollToSection;
+      const element = document.getElementById(sectionId);
+      if (element) {
+        // Small delay to ensure the page is fully loaded
+        setTimeout(() => {
+          element.scrollIntoView({ behavior: "smooth" });
+        }, 100);
+      }
+
+      // Clear the state to prevent scrolling on subsequent renders
+      window.history.replaceState({}, document.title);
+    }
+
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
-  }, []);
+  }, [location]);
 
   return (
     <div className="font-poppins">
