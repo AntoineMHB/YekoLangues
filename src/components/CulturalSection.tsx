@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useInView } from "react-intersection-observer";
-import { Music, BookOpen, RefreshCw } from "lucide-react";
+import { Music, BookOpen, RefreshCw, Play, Pause } from "lucide-react";
 
 interface Proverb {
   lingala: string;
@@ -17,6 +17,7 @@ const CulturalSection: React.FC = () => {
 
   const [proverbs, setProverbs] = useState<Proverb[]>([]);
   const [currentProverb, setCurrentProverb] = useState(0);
+  const [isPaused, setIsPaused] = useState(false);
 
 
   useEffect(() => {
@@ -32,14 +33,14 @@ const CulturalSection: React.FC = () => {
 
   // Auto rotateproverbs every 5 seconds
   useEffect(() => {
-    if (proverbs.length === 0) return;
+    if (proverbs.length === 0 || isPaused) return;
 
     const interval = setInterval(() => {
       setCurrentProverb((prev) => (prev + 1) % proverbs.length);
     }, 5000); // every 5 seconds
 
     return () => clearInterval(interval); // Clean up
-  }, [proverbs]);
+  }, [proverbs, isPaused]);
 
   const songs = [
     {
@@ -97,8 +98,18 @@ const CulturalSection: React.FC = () => {
                 <RefreshCw size={16} />
               </button>
 
+              <button 
+                  className="absolute top-4 right-14 w-8 h-8 flex items-center justify-center rounded-full bg-white bg-opacity-20 hover:bg-opacity-30 transition-colors"
+                  onClick={() => setIsPaused((prev) => !prev)}
+                  aria-label={isPaused ? "Play" : "Pause"}
+              >
+                {isPaused ? <Play size={16} /> : <Pause size={16} />}
+
+
+              </button>
+
               {proverbs.length > 0 ? (
-                    <div className="mb-4">
+                    <div className="mb-4 mt-4">
                     <h3 className="text-xl font-bold mb-2 text-accent-300">
                       {proverbs[currentProverb].lingala}
                     </h3>
