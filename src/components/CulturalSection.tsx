@@ -37,7 +37,7 @@ const CulturalSection: React.FC = () => {
 
     const interval = setInterval(() => {
       setCurrentProverb((prev) => (prev + 1) % proverbs.length);
-    }, 5000); // every 5 seconds
+    }, 15000); // every 5 seconds
 
     return () => clearInterval(interval); // Clean up
   }, [proverbs, isPaused]);
