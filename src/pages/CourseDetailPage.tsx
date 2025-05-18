@@ -1,6 +1,9 @@
 import { useParams, Link, useNavigate } from "react-router-dom";
 import { useCourse } from "../hooks/useCourse";
 import { ArrowLeft } from "lucide-react";
+import Navbar from "../components/Navbar";
+import Footer from "../components/Footer";
+import Testimonials from "../components/Testimonials";
 
 export default function CourseDetail() {
   const { id } = useParams();
@@ -25,6 +28,7 @@ export default function CourseDetail() {
 
   return (
     <div className="font-poppins">
+      {/* <Navbar /> */}
       {/* Hero Banner - Better positioned image with centered text */}
       <header
         className="relative h-80 flex items-center justify-center text-white"
@@ -36,7 +40,7 @@ export default function CourseDetail() {
       >
         <div className="text-center px-4">
           <h1 className="text-5xl font-bold mb-2">{course.title}</h1>
-          <p className="text-xl">Niveau {course.level}</p>
+          <p className="text-xl"> {course.level}</p>
         </div>
       </header>
 
@@ -52,19 +56,19 @@ export default function CourseDetail() {
       </div>
 
       {/* Main content */}
-      <div className="max-w-5xl mx-auto px-4 pb-20">
+      <div className="lg:max-w-5xl lg:mx-auto lg:px-4 lg:pb-20 sm:max-w-5xl sm:mx-auto sm:px-4 sm:pb-20">
         {/* Programme section */}
         <section className="mb-16">
-          <div className="inline-block bg-primary-500 text-white px-6 py-2 mb-6">
+          <div className="inline-block bg-secondary-500 text-white px-6 py-2 mb-6">
             <h2 className="text-lg font-bold uppercase">NOTRE PROGRAMME</h2>
           </div>
 
           <h3 className="text-3xl font-bold mb-6">
-            Un programme de Swahili adapté à tous les niveaux
+            Un programme de Lingala adapté à tous les niveaux
           </h3>
 
           <p className="text-gray-700 leading-relaxed mb-8">
-            Notre programme de Swahili est conçu pour s'adapter à votre niveau,
+            Notre programme de Lingala est conçu pour s'adapter à votre niveau,
             que vous soyez débutant, intermédiaire ou avancé. Grâce à un
             abonnement mensuel flexible, vous bénéficierez de cours en ligne
             interactifs, d'un suivi personnalisé et d'un accès à des ressources
@@ -78,26 +82,26 @@ export default function CourseDetail() {
               </h4>
               <ul className="space-y-3">
                 <li className="flex items-start">
-                  <span className="bg-primary-500 h-2 w-2 rounded-full mt-2 mr-2"></span>
+                  <span className="bg-secondary-500 h-2 w-2 rounded-full mt-2 mr-2"></span>
                   <span>Vocabulaire courant et expressions idiomatiques</span>
                 </li>
                 <li className="flex items-start">
-                  <span className="bg-primary-500 h-2 w-2 rounded-full mt-2 mr-2"></span>
+                  <span className="bg-secondary-500 h-2 w-2 rounded-full mt-2 mr-2"></span>
                   <span>Grammaire et conjugaison swahilie</span>
                 </li>
                 <li className="flex items-start">
-                  <span className="bg-primary-500 h-2 w-2 rounded-full mt-2 mr-2"></span>
+                  <span className="bg-secondary-500 h-2 w-2 rounded-full mt-2 mr-2"></span>
                   <span>Prononciation et conversation fluide</span>
                 </li>
                 <li className="flex items-start">
-                  <span className="bg-primary-500 h-2 w-2 rounded-full mt-2 mr-2"></span>
-                  <span>Culture et traditions d'Afrique de l'Est</span>
+                  <span className="bg-secondary-500 h-2 w-2 rounded-full mt-2 mr-2"></span>
+                  <span>Culture et traditions du Congo</span>
                 </li>
               </ul>
             </div>
 
             {/* Pricing card */}
-            <div className="bg-white rounded-lg shadow-lg p-6 border border-gray-100">
+            <div className="bg-secondary-500 text-white rounded-lg shadow-lg p-6 border border-gray-100">
               <div className="flex items-center mb-4 justify-center">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -119,7 +123,7 @@ export default function CourseDetail() {
               <div className="text-center mb-4">
                 <p className="text-5xl font-bold mb-2">
                   80€
-                  <span className="text-xl font-normal text-gray-500">
+                  <span className="text-xl font-normal text-white">
                     / mois
                   </span>
                 </p>
@@ -136,14 +140,14 @@ export default function CourseDetail() {
                 </h4>
                 <ul className="space-y-2">
                   <li className="flex items-start">
-                    <span className="text-primary-500 mr-2">•</span>
+                    <span className="text-white mr-2">•</span>
                     <span>
                       20 cours individuels en visioconférence avec un coach de
                       langue basé en Afrique.
                     </span>
                   </li>
                   <li className="flex items-start">
-                    <span className="text-primary-500 mr-2">•</span>
+                    <span className="text-white mr-2">•</span>
                     <span>
                       40 cours écrits couvrant conjugaison, grammaire et
                       vocabulaire.
@@ -152,19 +156,22 @@ export default function CourseDetail() {
                 </ul>
               </div>
 
-              <button className="w-full bg-primary-500 hover:bg-primary-600 text-white py-3 rounded-md transition duration-300 font-medium">
+              <button className="w-full bg-primary-50 bg-opacity-10 text-white hover:bg-white hover:text-gray-500 py-3 rounded-md transition duration-300 font-medium">
                 S'abonner maintenant
               </button>
             </div>
           </div>
         </section>
+      </div>
 
-        {/* Coach section - Using colors from design system */}
-        <section className="bg-accent-500 text-white -mx-4 px-4 py-16">
+      {/* <Testimonials /> */}
+
+              {/* Coach section - Using colors from design system */}
+              <section className="bg-accent-500 text-white px-4 py-16">
           <div className="max-w-5xl mx-auto">
-            <div className="bg-primary-500 inline-block text-white px-6 py-2 mb-6">
+            <div className="bg-primary-50 bg-opacity-20 font-bold inline-block text-white px-6 py-2 mb-6">
               <h2 className="uppercase font-bold">
-                RÉSERVER UN COURS AVEC UN COACH DE SWAHILI
+                RÉSERVER UN COURS AVEC UN COACH DE LINGALA
               </h2>
             </div>
 
@@ -205,69 +212,7 @@ export default function CourseDetail() {
           </div>
         </section>
 
-        {/* Optional: Home page style highlighted content section with orange accent */}
-        <section className="mt-16">
-          <div className="grid md:grid-cols-2 gap-12 items-center">
-            <div>
-              <h2 className="text-4xl font-bold mb-2">
-                <span className="text-accent-500">Parlez</span> la langue,
-              </h2>
-              <h2 className="text-4xl font-bold mb-6">
-                <span className="text-primary-500">vivez</span> la culture!
-              </h2>
-
-              <p className="text-gray-700 leading-relaxed mb-8">
-                Apprenez le Swahili facilement et à votre rythme, où que vous
-                soyez. Des cours en ligne pour tous les niveaux, animés par des
-                enseignants passionnés. Rejoignez-nous et ouvrez-vous à la
-                langue et à la culture africaine.
-              </p>
-
-              <div className="flex space-x-4">
-                <button className="bg-primary-500 hover:bg-primary-600 text-white px-6 py-3 rounded-md transition duration-300">
-                  Commencer votre apprentissage
-                </button>
-                <button className="border border-gray-300 hover:border-primary-500 px-6 py-3 rounded-md transition duration-300">
-                  Découvrir nos cours
-                </button>
-              </div>
-            </div>
-
-            <div className="bg-gray-100 p-6 rounded-lg">
-              <h3 className="text-xl font-bold mb-4">
-                Pourquoi apprendre le Swahili?
-              </h3>
-              <ul className="space-y-3">
-                <li className="flex items-start">
-                  <span className="bg-secondary-500 h-2 w-2 rounded-full mt-2 mr-2"></span>
-                  <span>
-                    Parlé par plus de 100 millions de personnes en Afrique de
-                    l'Est
-                  </span>
-                </li>
-                <li className="flex items-start">
-                  <span className="bg-secondary-500 h-2 w-2 rounded-full mt-2 mr-2"></span>
-                  <span>
-                    Langue officielle de la Communauté d'Afrique de l'Est
-                  </span>
-                </li>
-                <li className="flex items-start">
-                  <span className="bg-secondary-500 h-2 w-2 rounded-full mt-2 mr-2"></span>
-                  <span>
-                    Atout précieux pour les voyages et les affaires en Afrique
-                  </span>
-                </li>
-                <li className="flex items-start">
-                  <span className="bg-secondary-500 h-2 w-2 rounded-full mt-2 mr-2"></span>
-                  <span>
-                    Une des langues africaines les plus accessibles à apprendre
-                  </span>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </section>
-      </div>
+        <Footer />
     </div>
   );
 }
