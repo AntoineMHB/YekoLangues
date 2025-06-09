@@ -27,13 +27,13 @@ export default function CourseDetail() {
   return (
     <div className="font-poppins">
       <Navbar />
-      {/* Hero Banner - Better positioned image with centered text */}
+
       <header
         className="relative h-[30rem] flex items-center justify-center text-white"
         style={{
           backgroundImage: `linear-gradient(to bottom,rgba(0,0,0,.6),rgba(0,0,0,.6)),url(${course.image})`,
           backgroundSize: "cover",
-          backgroundPosition: "center 30%", // Adjust vertical positioning
+          backgroundPosition: "center 30%",
         }}
       >
         <div className="text-center px-4">
@@ -42,9 +42,7 @@ export default function CourseDetail() {
         </div>
       </header>
 
-      {/* Main content */}
       <div className="lg:max-w-7xl lg:mx-auto lg:px-4 lg:pb-20 sm:max-w-7xl sm:mx-auto sm:px-4 sm:pb-20 py-16">
-        {/* Programme section */}
         <section className="mb-16 pt-16">
           <div className="inline-block bg-secondary-500 text-white px-6 py-2 mb-6">
             <h2 className="text-lg font-bold uppercase">NOTRE PROGRAMME</h2>
@@ -55,11 +53,7 @@ export default function CourseDetail() {
           </h3>
 
           <p className="text-gray-700 leading-relaxed mb-8">
-            Notre programme de Lingala est conçu pour s'adapter à votre niveau,
-            que vous soyez débutant, intermédiaire ou avancé. Grâce à un
-            abonnement mensuel flexible, vous bénéficierez de cours en ligne
-            interactifs, d'un suivi personnalisé et d'un accès à des ressources
-            pédagogiques complètes.
+            {course.description}
           </p>
 
           <div className="grid md:grid-cols-2 gap-10">
@@ -67,27 +61,17 @@ export default function CourseDetail() {
               <h4 className="text-xl font-semibold mb-4">
                 Ce que vous apprendrez
               </h4>
+
               <ul className="space-y-3">
-                <li className="flex items-start">
-                  <span className="bg-secondary-500 h-2 w-2 rounded-full mt-2 mr-2"></span>
-                  <span>Vocabulaire courant et expressions idiomatiques</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="bg-secondary-500 h-2 w-2 rounded-full mt-2 mr-2"></span>
-                  <span>Grammaire et conjugaison swahilie</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="bg-secondary-500 h-2 w-2 rounded-full mt-2 mr-2"></span>
-                  <span>Prononciation et conversation fluide</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="bg-secondary-500 h-2 w-2 rounded-full mt-2 mr-2"></span>
-                  <span>Culture et traditions du Congo</span>
-                </li>
+                {course.learningOutcomes?.map((item, index) => (
+                  <li key={index} className="flex items-start">
+                    <span className="bg-secondary-500 h-2 w-2 rounded-full mt-2 mr-2"></span>
+                    <span>{item}</span>
+                  </li>
+                ))}
               </ul>
             </div>
 
-            {/* Pricing card */}
             <div className="bg-secondary-500 text-white rounded-lg shadow-lg p-6 border border-gray-100">
               <div className="flex items-start mb-4 justify-start">
                 <svg
@@ -149,11 +133,9 @@ export default function CourseDetail() {
         </section>
       </div>
 
-      {/* Coach section - Using colors from design system */}
       <section className="bg-accent-500 text-white px-4 py-16">
         <div className="max-w-7xl mx-auto">
           <div className="grid md:grid-cols-2 gap-10 items-center">
-            {/* Coach image */}
             <div>
               <div className="rounded-lg overflow-hidden h-[35rem] w-[30rem] pt-16">
                 <img
@@ -163,7 +145,7 @@ export default function CourseDetail() {
                 />
               </div>
               <div className="text-start mt-4">
-                <p className="text-base font-semibold">Coach de Swahili</p>
+                <p className="text-base font-semibold">Coach de Lingala</p>
                 <p className="text-2xl font-bold">
                   {`${
                     course.coach.firstName
@@ -180,12 +162,12 @@ export default function CourseDetail() {
                 </h2>
               </div>
               <h3 className="text-3xl font-bold mb-6">
-                Lancez-vous dans l'apprentissage du Swahili dès maintenant
+                Lancez-vous dans l'apprentissage du Lingala dès maintenant
               </h3>
 
               <p className="text-primary-50 leading-relaxed mb-8">
-                Rejoignez Soma Langues aujourd'hui et commencez votre aventure
-                linguistique avec le Swahili. Nos cours sont conçus pour vous
+                Rejoignez Yeko Langues aujourd'hui et commencez votre aventure
+                linguistique avec le lingala. Nos cours sont conçus pour vous
                 offrir une expérience d'apprentissage complète et engageante.
                 Inscrivez-vous dès maintenant pour un cours d'essai gratuit et
                 découvrez la richesse de cette langue africaine.

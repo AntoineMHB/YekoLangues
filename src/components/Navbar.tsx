@@ -4,7 +4,6 @@ import { Link as RouterLink, useLocation, useNavigate } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 import Logo from "../assets/logo";
 
-// Define types
 interface NavLinkItem {
   name: string;
   to: string;
@@ -42,7 +41,6 @@ const Navbar: React.FC = () => {
     { name: "Contact", to: "contact" },
   ];
 
-  // Renders either ScrollLink or RouterLink depending on current page
   const NavLink: React.FC<{ link: NavLinkItem }> = ({ link }) => {
     if (isHomePage) {
       return (
@@ -74,7 +72,6 @@ const Navbar: React.FC = () => {
     }
   };
 
-  // Button component that uses either ScrollLink or RouterLink
   const ActionButton = () => {
     if (isHomePage) {
       return (
@@ -114,24 +111,20 @@ const Navbar: React.FC = () => {
       }`}
     >
       <div className="container flex justify-between items-center">
-        {/* Logo with link to homepage */}
         <RouterLink to="/">
           <Logo className="h-10 w-auto" />
         </RouterLink>
 
-        {/* Desktop Navigation */}
         <div className="hidden md:flex space-x-1">
           {navLinks.map((link) => (
             <NavLink key={link.to} link={link} />
           ))}
         </div>
 
-        {/* Contact button for desktop */}
         <div className="hidden md:block">
           <ActionButton />
         </div>
 
-        {/* Mobile Menu Button */}
         <button
           className="md:hidden text-gray-700 focus:outline-none"
           onClick={toggleMenu}
@@ -145,7 +138,6 @@ const Navbar: React.FC = () => {
         </button>
       </div>
 
-      {/* Mobile Navigation */}
       {isMenuOpen && (
         <div className="md:hidden bg-white shadow-lg absolute w-full py-4 transition-all duration-300 animate-fade-in">
           <div className="container flex flex-col space-y-4">

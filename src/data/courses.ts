@@ -19,6 +19,13 @@ export const courses = [
       firstName: "Jeanine",
       lastName: "Mabunda",
     },
+
+    learningOutcomes: [
+      "Vocabulaire courant et expressions idiomatiques",
+      "Grammaire et conjugaison lingala",
+      "Prononciation et conversation fluide",
+      "Culture et traditions du Congo",
+    ],
   },
   {
     id: 2,
@@ -30,9 +37,16 @@ export const courses = [
     color: "secondary",
     coach: {
       image: intermediateCoach,
-      firstName: "Jeanine",
-      lastName: "Mabunda",
+      firstName: "Thérèse",
+      lastName: "Kayikwamba",
     },
+
+    learningOutcomes: [
+      "Vocabulaire courant et expressions idiomatiques",
+      "Grammaire et conjugaison lingala",
+      "Prononciation et conversation fluide",
+      "Culture et traditions du Congo",
+    ],
   },
   {
     id: 3,
@@ -44,8 +58,15 @@ export const courses = [
     color: "accent",
     coach: {
       image: advancedCoach,
-      firstName: "Jeanine",
-      lastName: "Mabunda",
+      firstName: "Thierry",
+      lastName: "Kimbudi",
     },
+
+    learningOutcomes: [
+      "Vocabulaire courant et expressions idiomatiques",
+      "Grammaire et conjugaison lingala",
+      "Prononciation et conversation fluide",
+      "Culture et traditions du Congo",
+    ],
   },
 ];

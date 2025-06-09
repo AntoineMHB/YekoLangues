@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { useInView } from "react-intersection-observer";
-import { MailIcon, Phone, MapPin, CheckCircle } from "lucide-react";
+import { MailIcon, Phone, MapPin } from "lucide-react";
+import emailjs from "@emailjs/browser";
+import toast, { Toaster } from "react-hot-toast";
 
 const Contact: React.FC = () => {
   const { ref, inView } = useInView({
@@ -29,23 +31,29 @@ const Contact: React.FC = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // Here you would typically send the form data to a server
-    console.log("Form submitted:", formState);
 
-    // Show success message
-    setIsSubmitted(true);
+    const serviceID = import.meta.env.VITE_EMAILJS_SERVICE_ID || "";
+    const templateID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID || "";
+    const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY || "";
 
-    // Reset form after 3 seconds
-    setTimeout(() => {
-      setIsSubmitted(false);
-      setFormState({
-        name: "",
-        email: "",
-        subject: "",
-        message: "",
-        phone: "",
+    emailjs
+      .send(serviceID, templateID, formState, publicKey)
+      .then(() => {
+        setIsSubmitted(true);
+        setFormState({
+          name: "",
+          email: "",
+          subject: "",
+          message: "",
+          phone: "",
+        });
+        toast.success(
+          "Message envoyé avec succès ! Nous vous répondrons bientôt."
+        );
+      })
+      .catch(() => {
+        toast.error("Erreur lors de l'envoi du message. Veuillez réessayer.");
       });
-    }, 3000);
   };
 
   return (
@@ -69,140 +77,127 @@ const Contact: React.FC = () => {
         >
           {/* Contact Form */}
           <div className="bg-white rounded-xl shadow-xl overflow-hidden">
-            {isSubmitted ? (
-              <div className="p-8 flex flex-col items-center justify-center h-full text-center">
-                <CheckCircle className="text-primary-500 mb-4" size={60} />
-                <h3 className="text-2xl font-bold text-gray-800 mb-2">
-                  Message envoyé !
-                </h3>
-                <p className="text-gray-600">
-                  Merci pour votre message. Nous vous répondrons dans les plus
-                  brefs délais.
-                </p>
+            <form onSubmit={handleSubmit} className="p-8 text-gray-800">
+              <div className="mb-6">
+                <label
+                  htmlFor="name"
+                  className="block text-sm font-medium mb-2"
+                >
+                  Nom
+                </label>
+                <input
+                  type="text"
+                  id="name"
+                  name="name"
+                  value={formState.name}
+                  onChange={handleChange}
+                  required
+                  className="input"
+                  placeholder="Votre nom"
+                />
               </div>
-            ) : (
-              <form onSubmit={handleSubmit} className="p-8 text-gray-800">
-                <div className="mb-6">
-                  <label
-                    htmlFor="name"
-                    className="block text-sm font-medium mb-2"
+
+              <div className="mb-6">
+                <label
+                  htmlFor="email"
+                  className="block text-sm font-medium mb-2"
+                >
+                  Adresse e-mail
+                </label>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  value={formState.email}
+                  onChange={handleChange}
+                  required
+                  className="input"
+                  placeholder="votre@email.com"
+                />
+              </div>
+
+              <div className="mb-6 relative">
+                <label
+                  htmlFor="subject"
+                  className="block text-sm font-medium mb-2"
+                >
+                  Sujet
+                </label>
+                <select
+                  id="subject"
+                  name="subject"
+                  value={formState.subject}
+                  onChange={handleChange}
+                  required
+                  className="input appearance-none pr-10"
+                >
+                  <option value="">Sélectionnez un sujet</option>
+                  <option value="course-inquiry">
+                    Renseignements sur les cours
+                  </option>
+                  <option value="free-trial">Cours d'essai gratuit</option>
+                  <option value="pricing">Tarifs et forfaits</option>
+                  <option value="other">Autre</option>
+                </select>
+
+                <div className="pointer-events-none absolute inset-y-0 right-3 top-7 flex items-center text-gray-500">
+                  <svg
+                    className="w-4 h-4"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    viewBox="0 0 24 24"
                   >
-                    Nom
-                  </label>
-                  <input
-                    type="text"
-                    id="name"
-                    name="name"
-                    value={formState.name}
-                    onChange={handleChange}
-                    required
-                    className="input"
-                    placeholder="Votre nom"
-                  />
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="M19 9l-7 7-7-7"
+                    />
+                  </svg>
                 </div>
+              </div>
 
-                <div className="mb-6">
-                  <label
-                    htmlFor="email"
-                    className="block text-sm font-medium mb-2"
-                  >
-                    Adresse e-mail
-                  </label>
-                  <input
-                    type="email"
-                    id="email"
-                    name="email"
-                    value={formState.email}
-                    onChange={handleChange}
-                    required
-                    className="input"
-                    placeholder="votre@email.com"
-                  />
-                </div>
+              <div className="mb-6">
+                <label
+                  htmlFor="message"
+                  className="block text-sm font-medium mb-2"
+                >
+                  Message
+                </label>
+                <textarea
+                  id="message"
+                  name="message"
+                  value={formState.message}
+                  onChange={handleChange}
+                  required
+                  rows={4}
+                  className="input resize-none"
+                  placeholder="Votre message"
+                ></textarea>
+              </div>
 
-                <div className="mb-6 relative">
-                  <label
-                    htmlFor="subject"
-                    className="block text-sm font-medium mb-2"
-                  >
-                    Sujet
-                  </label>
-                  <select
-                    id="subject"
-                    name="subject"
-                    value={formState.subject}
-                    onChange={handleChange}
-                    required
-                    className="input appearance-none pr-10"
-                  >
-                    <option value="">Sélectionnez un sujet</option>
-                    <option value="course-inquiry">
-                      Renseignements sur les cours
-                    </option>
-                    <option value="free-trial">Cours d'essai gratuit</option>
-                    <option value="pricing">Tarifs et forfaits</option>
-                    <option value="other">Autre</option>
-                  </select>
+              <div className="mb-6">
+                <label
+                  htmlFor="phone"
+                  className="block text-sm font-medium mb-2"
+                >
+                  Téléphone / WhatsApp (optionnel)
+                </label>
+                <input
+                  type="tel"
+                  id="phone"
+                  name="phone"
+                  value={formState.phone}
+                  onChange={handleChange}
+                  className="input"
+                  placeholder="+33 6 XX XX XX XX"
+                />
+              </div>
 
-                  <div className="pointer-events-none absolute inset-y-0 right-3 top-7 flex items-center text-gray-500">
-                    <svg
-                      className="w-4 h-4"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth="2"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        d="M19 9l-7 7-7-7"
-                      />
-                    </svg>
-                  </div>
-                </div>
-
-                <div className="mb-6">
-                  <label
-                    htmlFor="message"
-                    className="block text-sm font-medium mb-2"
-                  >
-                    Message
-                  </label>
-                  <textarea
-                    id="message"
-                    name="message"
-                    value={formState.message}
-                    onChange={handleChange}
-                    required
-                    rows={4}
-                    className="input resize-none"
-                    placeholder="Votre message"
-                  ></textarea>
-                </div>
-
-                <div className="mb-6">
-                  <label
-                    htmlFor="phone"
-                    className="block text-sm font-medium mb-2"
-                  >
-                    Téléphone / WhatsApp (optionnel)
-                  </label>
-                  <input
-                    type="tel"
-                    id="phone"
-                    name="phone"
-                    value={formState.phone}
-                    onChange={handleChange}
-                    className="input"
-                    placeholder="+33 6 XX XX XX XX"
-                  />
-                </div>
-
-                <button type="submit" className="btn btn-primary w-full">
-                  Envoyer
-                </button>
-              </form>
-            )}
+              <button type="submit" className="btn btn-primary w-full">
+                Envoyer
+              </button>
+            </form>
           </div>
 
           {/* Contact Info */}
@@ -324,6 +319,7 @@ const Contact: React.FC = () => {
           </div>
         </div>
       </div>
+      <Toaster />
     </section>
   );
 };
