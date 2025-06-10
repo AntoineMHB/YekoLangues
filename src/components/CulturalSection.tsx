@@ -8,6 +8,12 @@ interface Proverb {
   moral: string;
 }
 
+interface TrackInfo {
+  artist: string;
+  title: string;
+  lyrics: string;
+}
+
 const CulturalSection: React.FC = () => {
   const { ref, inView } = useInView({
     triggerOnce: true,
@@ -18,6 +24,68 @@ const CulturalSection: React.FC = () => {
   const [proverbs, setProverbs] = useState<Proverb[]>([]);
   const [currentProverb, setCurrentProverb] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
+  const [accessToken, setAccessToken] = useState<string | null>(null);
+  const [trackInfo, setTrackInfo] = useState<any>(null);
+  const [lyrics, setLyrics] = useState<string>("");
+  
+  // REdirects user to Spotify login
+  const authorize = () => {
+    const clientId = "3f50e625da724aa2886064624c577da9";
+    const redirectUri = "https://yeko-langues.vercel.app/";
+    const scopes = ["user-read-currently-playing", "user-read-playback-state"];
+    const authUrl = `https://accounts.spotify.com/authorize?client_id=${clientId}&response_type=token&redirect_uri=${encodeURIComponent(
+      redirectUri
+    )}&scope=${scopes.join("%20")}`;
+
+    window.location.href = authUrl;
+  };
+
+  // Get token from URL hash
+  useEffect(() => {
+    const hash = window.location.hash;
+    if (hash.includes("access_token")) {
+      const token = new URLSearchParams(hash.substring(1)).get("access_token");
+      if (token) {
+        setAccessToken(token);
+        window.history.replaceState({}, document.title, window.location.pathname);
+      }
+    }
+  }, []);
+
+  // Fetch current track and lyrics
+  useEffect(() => {
+    if (!accessToken) return;
+
+    async function fetchTrackAndLyrics() {
+      try {
+        const res = await fetch("https://api.spotify.com/v1/me/player/currently-playing", {
+          headers: {
+            Authorization: `Bearer ${accessToken}`,
+          },
+        });
+
+        if (!res.ok) throw new Error("No track or not playing");
+
+        const data = await res.json();
+        setTrackInfo(data);
+
+        const artist = data.item?.artists?.[0]?.name;
+        const title = data.item?.name;
+
+        if (artist && title) {
+          const lyricsRes = await fetch(`https://api.lyrics.ovh/v1/${artist}/${title}`);
+          const lyricsData = await lyricsRes.json();
+          setLyrics(lyricsData.lyrics || "Lyrics not found.");
+        }
+      } catch (error) {
+        console.error("Error fetching track or lyrics:", error);
+        setTrackInfo(null);
+        setLyrics("No lyrics found or no song currently playing.");
+      }
+    }
+
+    fetchTrackAndLyrics();
+  }, [accessToken]);
 
 
   useEffect(() => {
@@ -41,33 +109,6 @@ const CulturalSection: React.FC = () => {
 
     return () => clearInterval(interval); // Clean up
   }, [proverbs, isPaused]);
-
-  const songs = [
-    {
-      id: 1,
-      title: "Indépendance Cha-Cha",
-      artist: "Grand Kallé et l'African Jazz",
-      info: "Chanson emblématique célébrant l'indépendance du Congo",
-      image:
-        "https://images.pexels.com/photos/2191013/pexels-photo-2191013.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
-    },
-    {
-      id: 2,
-      title: "Mario",
-      artist: "Franco & le TPOK Jazz",
-      info: "Un classique de la rumba congolaise des années 80",
-      image:
-        "https://images.pexels.com/photos/2147029/pexels-photo-2147029.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
-    },
-    {
-      id: 3,
-      title: "Nakei Nairobi",
-      artist: "Mbilia Bel",
-      info: "Hit de la musique congolaise des années 80",
-      image:
-        "https://images.pexels.com/photos/3388899/pexels-photo-3388899.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
-    },
-  ];
 
   const rotateProverb = () => {
     setCurrentProverb((prev) => (prev + 1) % proverbs.length);
@@ -160,7 +201,39 @@ const CulturalSection: React.FC = () => {
                  src="https://open.spotify.com/embed/playlist/12Hk5OwmKbviybL6ZXZmZ2?utm_source=generator&theme=0" 
                  width="100%" height="352" frameBorder="0" 
                  allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" 
-                 loading="lazy"></iframe>
+                 loading="lazy">
+
+              </iframe>
+
+              {/* Lyrics */}
+
+              <div className="mt-8">
+  {!accessToken ? (
+    <button
+      onClick={authorize}
+      className="bg-green-600 hover:bg-green-700 text-white py-2 px-4 rounded"
+    >
+      Se connecter à Spotify
+    </button>
+  ) : (
+    <div className="bg-white bg-opacity-10 backdrop-blur-sm rounded-xl p-4 mt-4 text-sm">
+      {trackInfo ? (
+        <>
+          <p className="mb-2">
+            <strong>Chanson :</strong> {trackInfo.item.name} <br />
+            <strong>Artiste :</strong> {trackInfo.item.artists[0].name}
+          </p>
+          <pre className="whitespace-pre-wrap text-white">{lyrics}</pre>
+        </>
+      ) : (
+        <p>Aucune chanson en cours de lecture.</p>
+      )}
+    </div>
+  )}
+</div>
+
+
+
 
             </div>
           </div>
@@ -168,6 +241,7 @@ const CulturalSection: React.FC = () => {
       </div>
 
       <div className="wave-separator wave-primary absolute bottom-0 left-0 right-0"></div>
+
     </section>
   );
 };
