@@ -89,7 +89,7 @@ const CulturalSection: React.FC = () => {
 
 
   useEffect(() => {
-    fetch("/src/data/lingalaProverbes.json")
+    fetch("/lingalaProverbes.json")
       .then((res) => res.json())
       .then((data) => {
         setProverbs(data);
