@@ -21,7 +21,7 @@ const CulturalSection: React.FC = () => {
 
 
   useEffect(() => {
-    fetch("/src/data/lingala_proverbs.json")
+    fetch("/src/data/lingalaProverbes.json")
       .then((res) => res.json())
       .then((data) => {
         setProverbs(data);
@@ -31,13 +31,13 @@ const CulturalSection: React.FC = () => {
       });
   }, []);
 
-  // Auto rotateproverbs every 5 seconds
+  // Auto rotateproverbs every 15 seconds
   useEffect(() => {
     if (proverbs.length === 0 || isPaused) return;
 
     const interval = setInterval(() => {
       setCurrentProverb((prev) => (prev + 1) % proverbs.length);
-    }, 15000); // every 5 seconds
+    }, 15000); // every 15 seconds
 
     return () => clearInterval(interval); // Clean up
   }, [proverbs, isPaused]);
@@ -154,31 +154,15 @@ const CulturalSection: React.FC = () => {
               <h2 className="text-2xl font-bold">Playlist Lingala</h2>
             </div>
 
-            <div className="space-y-4">
-              {songs.map((song) => (
-                <div
-                  key={song.id}
-                  className="flex bg-white bg-opacity-10 backdrop-blur-sm rounded-lg overflow-hidden hover:bg-opacity-20 transition-colors cursor-pointer"
-                >
-                  <div className="w-20 h-20 flex-shrink-0">
-                    <img
-                      src={song.image}
-                      alt={song.title}
-                      className="w-full h-full object-cover"
-                    />
-                  </div>
-                  <div className="p-4">
-                    <h3 className="font-bold">{song.title}</h3>
-                    <p className="text-sm text-gray-300">{song.artist}</p>
-                    <p className="text-xs text-gray-500 mt-1">{song.info}</p>
-                  </div>
-                </div>
-              ))}
-            </div>
+            <div className="mt-8">
+              <iframe 
+                 className="border-radius:12px" 
+                 src="https://open.spotify.com/embed/playlist/12Hk5OwmKbviybL6ZXZmZ2?utm_source=generator&theme=0" 
+                 width="100%" height="352" frameBorder="0" 
+                 allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" 
+                 loading="lazy"></iframe>
 
-            <button className="btn btn-outline border-white text-white hover:bg-white hover:bg-opacity-10 mt-6 w-full">
-              Découvrir plus de musique
-            </button>
+            </div>
           </div>
         </div>
       </div>
