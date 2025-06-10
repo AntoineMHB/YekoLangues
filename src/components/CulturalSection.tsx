@@ -207,7 +207,7 @@ const CulturalSection: React.FC = () => {
 
               {/* Lyrics */}
 
-              <div className="mt-8">
+              {/* <div className="mt-8">
   {!accessToken ? (
     <button
       onClick={authorize}
@@ -230,7 +230,7 @@ const CulturalSection: React.FC = () => {
       )}
     </div>
   )}
-</div>
+</div> */}
 
 
 
