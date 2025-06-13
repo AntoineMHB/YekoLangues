@@ -58,7 +58,7 @@ export default {
         poppins: ["Poppins", "sans-serif"],
       },
       backgroundImage: {
-        "hero-pattern": "url('src/assets/hero-image.jpeg')",
+        "hero-pattern": "url('/hero-image.jpeg')",
         "about-pattern":
           "url('https://images.pexels.com/photos/8885024/pexels-photo-8885024.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2')",
       },
