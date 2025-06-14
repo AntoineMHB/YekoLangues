@@ -67,7 +67,7 @@ const WhyChooseUs: React.FC = () => {
   return (
     <section
       id="why-us"
-      className="py-12 sm:py-16 lg:py-20 bg-secondary-500 text-white relative"
+      className="py-12 sm:py-16 lg:py-20 bg-secondary-500 text-white relative hover:cursor-pointer"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-8 sm:mb-12">

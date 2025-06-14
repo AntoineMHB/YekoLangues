@@ -118,8 +118,6 @@ const About: React.FC = () => {
           </div>
         </div>
       </div>
-
-      <div className="wave-separator wave-accent absolute bottom-0 left-0 right-0"></div>
     </section>
   );
 };

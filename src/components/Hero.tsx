@@ -31,7 +31,7 @@ const Hero: React.FC = () => {
             culture congolaise.
           </p>
 
-          <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
+          <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 mb-20">
             <Link
               to="start-learning"
               spy={true}
@@ -61,7 +61,7 @@ const Hero: React.FC = () => {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 1, duration: 1 }}
-          className="absolute bottom-8 top-[33rem] left-1/2 transform -translate-x-1/2 hidden lg:block"
+          className=" absolute bottom-8 top-[36rem] sm:bottom-10 left-1/2 transform -translate-x-1/2 hidden lg:block sm:flex"
         >
           <Link
             to="about"
