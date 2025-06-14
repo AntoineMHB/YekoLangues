@@ -61,7 +61,7 @@ const Hero: React.FC = () => {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 1, duration: 1 }}
-          className=" absolute bottom-8 top-[36rem] sm:bottom-10 left-1/2 transform -translate-x-1/2 hidden lg:block sm:flex"
+          className=" absolute bottom-8 top-[35rem] sm:bottom-10 left-1/2 transform -translate-x-1/2 hidden lg:block sm:flex"
         >
           <Link
             to="about"
