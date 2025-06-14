@@ -4,24 +4,25 @@ import Logo from "../assets/logo";
 
 const Footer: React.FC = () => {
   return (
-    <footer className="bg-gray-900 text-white pt-16 pb-8">
-      <div className="container">
-        <div className="grid md:grid-cols-4 gap-8 mb-16">
+    <footer className="bg-gray-900 text-white pt-12 pb-6 sm:pt-16 sm:pb-8">
+      <div className="container px-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 mb-12 sm:mb-16">
           <div>
             <Logo className="mb-4" />
-            <p className="text-gray-400 mb-4">
+            <p className="text-gray-400 mb-4 text-sm sm:text-base">
               Apprenez le Lingala avec des professeurs natifs passionnés. Des
               cours adaptés à tous les niveaux.
             </p>
 
             <div className="flex space-x-4 mt-4">
+              {/* Social icons */}
               <a
                 href="#"
                 className="text-gray-400 hover:text-white transition-colors"
               >
                 <span className="sr-only">Facebook</span>
                 <svg
-                  className="w-6 h-6"
+                  className="w-5 h-5 sm:w-6 sm:h-6"
                   fill="currentColor"
                   viewBox="0 0 24 24"
                   aria-hidden="true"
@@ -39,7 +40,7 @@ const Footer: React.FC = () => {
               >
                 <span className="sr-only">Instagram</span>
                 <svg
-                  className="w-6 h-6"
+                  className="w-5 h-5 sm:w-6 sm:h-6"
                   fill="currentColor"
                   viewBox="0 0 24 24"
                   aria-hidden="true"
@@ -57,7 +58,7 @@ const Footer: React.FC = () => {
               >
                 <span className="sr-only">YouTube</span>
                 <svg
-                  className="w-6 h-6"
+                  className="w-5 h-5 sm:w-6 sm:h-6"
                   fill="currentColor"
                   viewBox="0 0 24 24"
                   aria-hidden="true"
@@ -73,12 +74,14 @@ const Footer: React.FC = () => {
           </div>
 
           <div>
-            <h3 className="text-lg font-bold mb-4">Nos cours</h3>
+            <h3 className="text-base sm:text-lg font-bold mb-3 sm:mb-4">
+              Nos cours
+            </h3>
             <ul className="space-y-2">
               <li>
                 <a
                   href="#"
-                  className="text-gray-400 hover:text-white transition-colors"
+                  className="text-gray-400 hover:text-white transition-colors text-sm sm:text-base"
                 >
                   Débutant
                 </a>
@@ -86,7 +89,7 @@ const Footer: React.FC = () => {
               <li>
                 <a
                   href="#"
-                  className="text-gray-400 hover:text-white transition-colors"
+                  className="text-gray-400 hover:text-white transition-colors text-sm sm:text-base"
                 >
                   Intermédiaire
                 </a>
@@ -94,7 +97,7 @@ const Footer: React.FC = () => {
               <li>
                 <a
                   href="#"
-                  className="text-gray-400 hover:text-white transition-colors"
+                  className="text-gray-400 hover:text-white transition-colors text-sm sm:text-base"
                 >
                   Avancé
                 </a>
@@ -102,7 +105,7 @@ const Footer: React.FC = () => {
               <li>
                 <a
                   href="#"
-                  className="text-gray-400 hover:text-white transition-colors"
+                  className="text-gray-400 hover:text-white transition-colors text-sm sm:text-base"
                 >
                   Cours individuels
                 </a>
@@ -110,7 +113,7 @@ const Footer: React.FC = () => {
               <li>
                 <a
                   href="#"
-                  className="text-gray-400 hover:text-white transition-colors"
+                  className="text-gray-400 hover:text-white transition-colors text-sm sm:text-base"
                 >
                   Cours de groupe
                 </a>
@@ -118,7 +121,7 @@ const Footer: React.FC = () => {
               <li>
                 <a
                   href="#"
-                  className="text-gray-400 hover:text-white transition-colors"
+                  className="text-gray-400 hover:text-white transition-colors text-sm sm:text-base"
                 >
                   Cours pour enfants
                 </a>
@@ -127,7 +130,9 @@ const Footer: React.FC = () => {
           </div>
 
           <div>
-            <h3 className="text-lg font-bold mb-4">Liens rapides</h3>
+            <h3 className="text-base sm:text-lg font-bold mb-3 sm:mb-4">
+              Liens rapides
+            </h3>
             <ul className="space-y-2">
               <li>
                 <Link
@@ -135,7 +140,7 @@ const Footer: React.FC = () => {
                   spy={true}
                   smooth={true}
                   duration={500}
-                  className="text-gray-400 hover:text-white transition-colors cursor-pointer"
+                  className="text-gray-400 hover:text-white transition-colors cursor-pointer text-sm sm:text-base"
                 >
                   Accueil
                 </Link>
@@ -146,7 +151,7 @@ const Footer: React.FC = () => {
                   spy={true}
                   smooth={true}
                   duration={500}
-                  className="text-gray-400 hover:text-white transition-colors cursor-pointer"
+                  className="text-gray-400 hover:text-white transition-colors cursor-pointer text-sm sm:text-base"
                 >
                   À propos
                 </Link>
@@ -157,7 +162,7 @@ const Footer: React.FC = () => {
                   spy={true}
                   smooth={true}
                   duration={500}
-                  className="text-gray-400 hover:text-white transition-colors cursor-pointer"
+                  className="text-gray-400 hover:text-white transition-colors cursor-pointer text-sm sm:text-base"
                 >
                   Nos cours
                 </Link>
@@ -168,7 +173,7 @@ const Footer: React.FC = () => {
                   spy={true}
                   smooth={true}
                   duration={500}
-                  className="text-gray-400 hover:text-white transition-colors cursor-pointer"
+                  className="text-gray-400 hover:text-white transition-colors cursor-pointer text-sm sm:text-base"
                 >
                   Pourquoi nous choisir
                 </Link>
@@ -179,7 +184,7 @@ const Footer: React.FC = () => {
                   spy={true}
                   smooth={true}
                   duration={500}
-                  className="text-gray-400 hover:text-white transition-colors cursor-pointer"
+                  className="text-gray-400 hover:text-white transition-colors cursor-pointer text-sm sm:text-base"
                 >
                   Témoignages
                 </Link>
@@ -190,7 +195,7 @@ const Footer: React.FC = () => {
                   spy={true}
                   smooth={true}
                   duration={500}
-                  className="text-gray-400 hover:text-white transition-colors cursor-pointer"
+                  className="text-gray-400 hover:text-white transition-colors cursor-pointer text-sm sm:text-base"
                 >
                   FAQ
                 </Link>
@@ -199,11 +204,13 @@ const Footer: React.FC = () => {
           </div>
 
           <div>
-            <h3 className="text-lg font-bold mb-4">Contact</h3>
+            <h3 className="text-base sm:text-lg font-bold mb-3 sm:mb-4">
+              Contact
+            </h3>
             <ul className="space-y-2">
-              <li className="flex items-center text-gray-400">
+              <li className="flex items-center text-gray-400 text-sm sm:text-base">
                 <svg
-                  className="w-5 h-5 mr-2"
+                  className="w-4 h-4 sm:w-5 sm:h-5 mr-2"
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
@@ -218,9 +225,9 @@ const Footer: React.FC = () => {
                 </svg>
                 contact@yekolangue.com
               </li>
-              <li className="flex items-center text-gray-400">
+              <li className="flex items-center text-gray-400 text-sm sm:text-base">
                 <svg
-                  className="w-5 h-5 mr-2"
+                  className="w-4 h-4 sm:w-5 sm:h-5 mr-2"
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
@@ -238,20 +245,22 @@ const Footer: React.FC = () => {
             </ul>
 
             <div className="mt-6">
-              <h3 className="text-lg font-bold mb-4">Newsletter</h3>
-              <p className="text-gray-400 text-sm mb-4">
+              <h3 className="text-base sm:text-lg font-bold mb-3 sm:mb-4">
+                Newsletter
+              </h3>
+              <p className="text-gray-400 text-xs sm:text-sm mb-4">
                 Inscrivez-vous pour recevoir des conseils d'apprentissage et nos
                 dernières nouvelles.
               </p>
-              <form className="flex">
+              <form className="flex flex-col sm:flex-row">
                 <input
                   type="email"
                   placeholder="Votre email"
-                  className="px-4 py-2 w-full rounded-l-lg bg-gray-800 border border-gray-700 text-white focus:outline-none focus:ring-2 focus:ring-primary-500"
+                  className="px-3 py-2 w-full rounded-t-lg sm:rounded-l-lg sm:rounded-tr-none bg-gray-800 border border-gray-700 text-white focus:outline-none focus:ring-2 focus:ring-primary-500 text-xs sm:text-sm"
                 />
                 <button
                   type="submit"
-                  className="bg-primary-500 text-white rounded-r-lg px-4 hover:bg-primary-600 transition-colors"
+                  className="bg-primary-500 text-white rounded-b-lg sm:rounded-r-lg sm:rounded-bl-none px-4 py-2 hover:bg-primary-600 transition-colors text-xs sm:text-sm"
                 >
                   OK
                 </button>
@@ -260,13 +269,13 @@ const Footer: React.FC = () => {
           </div>
         </div>
 
-        <div className="border-t border-gray-800 pt-8 mt-8 text-gray-400 text-sm">
+        <div className="border-t border-gray-800 pt-6 sm:pt-8 mt-6 sm:mt-8 text-gray-400 text-xs sm:text-sm">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <p>
               &copy; {new Date().getFullYear()} Yekolangue. Tous droits
               réservés.
             </p>
-            <div className="flex space-x-6 mt-4 md:mt-0">
+            <div className="flex flex-col sm:flex-row space-y-2 sm:space-y-0 sm:space-x-6 mt-4 sm:mt-0">
               <a href="#" className="hover:text-white transition-colors">
                 Mentions légales
               </a>

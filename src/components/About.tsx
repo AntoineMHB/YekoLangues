@@ -11,18 +11,20 @@ const About: React.FC = () => {
 
   return (
     <section id="about" className="section bg-primary-500 text-white">
-      <div className="container">
-        <div className="text-center mb-12">
-          <h2 className="section-title text-white">À propos de Yekolangue</h2>
+      <div className="container px-4 sm:px-6 lg:px-8">
+        <div className="text-center mb-8 sm:mb-10 lg:mb-12">
+          <h2 className="section-title text-white text-2xl sm:text-3xl lg:text-4xl">
+            À propos de Yekolangue
+          </h2>
         </div>
 
         <div
           ref={ref}
-          className={`grid md:grid-cols-2 gap-12 items-center ${
+          className={`grid md:grid-cols-2 gap-8 sm:gap-10 lg:gap-12 items-center ${
             inView ? "animate-on-scroll animated" : "animate-on-scroll"
           }`}
         >
-          <div className="rounded-xl overflow-hidden shadow-xl">
+          <div className="rounded-xl overflow-hidden shadow-xl order-2 md:order-1">
             <img
               src={AboutImage}
               alt="Yekolangue cultural learning"
@@ -30,58 +32,86 @@ const About: React.FC = () => {
             />
           </div>
 
-          <div className="flex flex-col justify-between">
-            <div className="text-center mb-8">
-              <p className="text-lg mb-6">
+          <div className="flex flex-col justify-between order-1 md:order-2">
+            <div className="text-justify md:text-left mb-6 sm:mb-8">
+              <p className="text-sm sm:text-base lg:text-lg mb-4 sm:mb-5 lg:mb-6 leading-relaxed">
                 Yekolangue est née d'une passion : celle de transmettre la
                 beauté de la langue lingala et de rapprocher les Congolais de
                 leurs racines culturelles.
               </p>
 
-              <p className="text-lg mb-6">
+              <p className="text-sm sm:text-base lg:text-lg mb-4 sm:mb-5 lg:mb-6 leading-relaxed">
                 Nous croyons que parler sa langue, c'est porter son identité
                 avec fierté. Notre mission est aussi d'ouvrir l'apprentissage du
                 lingala à toute personne désireuse de mieux comprendre l'âme du
                 Congo.
               </p>
 
-              <p className="text-lg">
+              <p className="text-sm sm:text-base lg:text-lg leading-relaxed">
                 Chez Yekolangue, nous allions tradition et modernité pour vous
                 offrir une expérience d'apprentissage conviviale, efficace et
                 enrichissante.
               </p>
             </div>
 
-            <div className="grid grid-cols-2 gap-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
               <div className="flex items-start">
-                <Globe className="mr-3 text-accent-400" size={24} />
+                <Globe
+                  className="mr-3 text-accent-400 flex-shrink-0 mt-1"
+                  size={20}
+                />
                 <div>
-                  <h3 className="font-bold text-lg mb-1">Culturel</h3>
-                  <p>Plus qu'une langue, une identité</p>
+                  <h3 className="font-bold text-base sm:text-lg mb-1">
+                    Culturel
+                  </h3>
+                  <p className="text-sm sm:text-base">
+                    Plus qu'une langue, une identité
+                  </p>
                 </div>
               </div>
 
               <div className="flex items-start">
-                <BookOpen className="mr-3 text-accent-400" size={24} />
+                <BookOpen
+                  className="mr-3 text-accent-400 flex-shrink-0 mt-1"
+                  size={20}
+                />
                 <div>
-                  <h3 className="font-bold text-lg mb-1">Pédagogique</h3>
-                  <p>Méthodes adaptées et efficaces</p>
+                  <h3 className="font-bold text-base sm:text-lg mb-1">
+                    Pédagogique
+                  </h3>
+                  <p className="text-sm sm:text-base">
+                    Méthodes adaptées et efficaces
+                  </p>
                 </div>
               </div>
 
               <div className="flex items-start">
-                <Users className="mr-3 text-accent-400" size={24} />
+                <Users
+                  className="mr-3 text-accent-400 flex-shrink-0 mt-1"
+                  size={20}
+                />
                 <div>
-                  <h3 className="font-bold text-lg mb-1">Communautaire</h3>
-                  <p>Apprenez au sein d'une communauté</p>
+                  <h3 className="font-bold text-base sm:text-lg mb-1">
+                    Communautaire
+                  </h3>
+                  <p className="text-sm sm:text-base">
+                    Apprenez au sein d'une communauté
+                  </p>
                 </div>
               </div>
 
               <div className="flex items-start">
-                <Heart className="mr-3 text-accent-400" size={24} />
+                <Heart
+                  className="mr-3 text-accent-400 flex-shrink-0 mt-1"
+                  size={20}
+                />
                 <div>
-                  <h3 className="font-bold text-lg mb-1">Passionné</h3>
-                  <p>Un enseignement avec cœur</p>
+                  <h3 className="font-bold text-base sm:text-lg mb-1">
+                    Passionné
+                  </h3>
+                  <p className="text-sm sm:text-base">
+                    Un enseignement avec cœur
+                  </p>
                 </div>
               </div>
             </div>

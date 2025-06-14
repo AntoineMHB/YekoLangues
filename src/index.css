@@ -92,6 +92,13 @@
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
+  display: none;
+}
+
+@media screen and (min-width: 768px) {
+  .wave-separator {
+    display: block;
+  }
 }
 
 .wave-primary {
