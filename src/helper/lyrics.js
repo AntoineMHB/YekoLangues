@@ -55,6 +55,37 @@ function highlightLyrics(syncedLyrics, progress_ms) {
 
     const container = document.getElementById('lyrics');
     container.innerHTML = syncedLyrics.map((line, i) =>
-    `<div class="${i === index ? 'active' : ''}">${line.text}</div>`)
+    `<div class="${i === index ? 'active' : ''}">${line.text}</div>`
+  ).join('');
 }
+
+async function main() {
+    const accessToken = getAccessTokenFromUrl();
+    if (!accessToken) return;
+
+    let lastTrack = '';
+    let syncedLyrics = [];
+
+    setInterval(async () => {
+        const track = await getCurrentTrack(accessToken);
+        if (!track) return;
+
+        document.getElementById('trackInfo').inneerText = `${track.artist} - ${track.title}`;
+
+        const trackId = `${track.artist}-${track.title}`;
+        if (trackId !== lastTrack) {
+            lastTrack = trackId;
+            const lyrics = await fetchLyrics(track.artist, track.title);
+            if (!lyrics) {
+                document.getElementById('lyrics').innerText = 'Lyrics not found.';
+                return;
+            }
+            syncedLyrics = syncLyrics(lyrics);
+        }
+
+        highlightLyrics(syncedLyrics, track.progress_ms);
+    }, 1000);
+}
+
+main();
 

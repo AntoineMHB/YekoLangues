@@ -150,7 +150,7 @@ export default function CourseDetail() {
                   className="w-full h-full object-cover"
                 />
               </div>
-              <div className="text-center lg:text-start mt-4">
+              <div className="text-center lg:text-center mt-4">
                 <p className="text-sm sm:text-base font-semibold">
                   Coach de Lingala
                 </p>
