@@ -6,7 +6,7 @@ import WhyChooseUs from "../components/WhyChooseUs";
 import Testimonials from "../components/Testimonials";
 import CulturalSection from "./CulturalSection";
 import FAQ from "../components/FAQ";
-import Contact from "./Contact";
+import Contact from "./ContactPage";
 import Footer from "../components/Footer";
 
 export default function Home() {
@@ -15,7 +15,7 @@ export default function Home() {
       <Navbar />
       <Hero />
       {/* <About /> */}
-      <Courses />
+      {/* <Courses /> */}
       <WhyChooseUs />
       <Testimonials />
       {/* <CulturalSection /> */}

@@ -6,7 +6,8 @@ import Logo from "../assets/logo";
 
 interface NavLinkItem {
   name: string;
-  to: string;
+  to?: string;
+  submenu?: { name: string; to: string }[];
 }
 
 const Navbar: React.FC = () => {
@@ -33,59 +34,52 @@ const Navbar: React.FC = () => {
 
   const navLinks: NavLinkItem[] = [
     { name: "Accueil", to: "/" },
-    { name: "Langues", to: "langues" },
-    { name: "Culture", to: "culture" },
-    { name: "Blog", to: "blog" },
-    { name: "À propos", to: "about" },
-    { name: "Nos cours", to: "courses" },
+    { 
+      name: "Langues", 
+      submenu: [
+        { name: "Lingala", to: "/langues/lingala" },
+        { name: "Swahili", to: "/langues/swahili" },
+      ],
+    },
+    { name: "Culture", to: "/culture" },
+    { name: "Blog", to: "/blog" },
+    { name: "À propos", to: "/about" },
+    // { name: "Nos cours", to: "/courses" },
     // { name: "Pourquoi nous", to: "why-us" },
     // { name: "Témoignages", to: "testimonials" },
-    { name: "FAQ", to: "faq" },
-    { name: "Contact", to: "contact" },
+    // { name: "FAQ", to: "faq" },
+    { name: "Contact", to: "/contact" },
   ];
 
   const NavLink: React.FC<{ link: NavLinkItem }> = ({ link }) => {
-    // if (isHomePage) {
+    if (link.submenu) {
       return (
-        // <ScrollLink
-        //   to={link.to}
-        //   spy={true}
-        //   smooth={true}
-        //   offset={-70}
-        //   duration={500}
-        //   className="nav-link cursor-pointer"
-        //   activeClass="active"
-        //   onClick={() => setIsMenuOpen(false)}
-        // >
-        //   {link.name}
-        // </ScrollLink>
-
-        <Link
-          to={link.to}
-          // spy={true}
-          // smooth={true}
-          // offset={-70}
-          // duration={500}
+        <div className="relative group">
+          <span className="nav-link cursor-pointer px-4 py-2 hover:text-primary">{link.name}</span>
+          <div className="absolute left-0 mt-2 w-40 bg-white shadow-lg rounded-md hidden group-hover:block z-50">
+            {link.submenu.map((sublink) => (
+              <RouterLink
+                key={sublink.to}
+                to={sublink.to}
+                className="block px-4 py-2 text-gray-700 hover:bg-gray-100"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                {sublink.name}
+              </RouterLink>
+            ))}
+          </div>
+        </div>
+      );
+    }
+      return (
+        <RouterLink
+          to={link.to || "#"}
           className="nav-link cursor-pointer"
-          // activeClass="active"
           onClick={() => setIsMenuOpen(false)}
         >
           {link.name}
-        </Link>
+        </RouterLink>
       );
-    // } else {
-    //   return (
-    //     <button
-    //       className="nav-link cursor-pointer"
-    //       onClick={() => {
-    //         setIsMenuOpen(false);
-    //         navigate("/", { state: { scrollToSection: link.to } });
-    //       }}
-    //     >
-    //       {link.name}
-    //     </button>
-    //   );
-    // }
   };
 
   const ActionButton = () => {
@@ -131,7 +125,8 @@ const Navbar: React.FC = () => {
           <Logo className="h-10 w-auto" />
         </RouterLink>
 
-        <div className="hidden md:flex space-x-1">
+        <div className="hidden md:flex items-center space-x-4">
+
           {navLinks.map((link) => (
             <NavLink key={link.to} link={link} />
           ))}

@@ -63,7 +63,7 @@ const Contact: React.FC = () => {
     <div className="bg-white">
       <Navbar />
 
-            <header
+      <header
         className="relative h-64 sm:h-80 md:h-96 lg:h-[30rem] flex items-center justify-center text-white"
         style={{
           backgroundImage: `linear-gradient(to bottom,rgba(0,0,0,.6),rgba(0,0,0,.6)),url("src/assets/contactImage.jpg")`,

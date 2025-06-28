@@ -8,6 +8,8 @@ import About from "./pages/About";
 import { Contact } from "lucide-react";
 import ContactPage from "./pages/ContactPage";
 import HomePage from "./pages/HomePage";
+import Blog from "./pages/Blog";
+import Courses from "./pages/Courses";
 
 function App() {
   const location = useLocation();
@@ -72,6 +74,8 @@ function App() {
         <Route path="/culture" element={<CulturalSection />} />
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<ContactPage />} />
+        <Route path="/blog" element={<Blog />} />
+        <Route path="/langues/lingala" element={<Courses />} />
         <Route path="*" element={<p>Page non trouvée</p>} />
       </Routes>
     </div>
