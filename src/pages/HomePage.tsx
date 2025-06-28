@@ -1,12 +1,12 @@
 import Navbar from "../components/Navbar";
 import Hero from "../components/Hero";
-import About from "../components/About";
+import About from "./About";
 import Courses from "../components/Courses";
 import WhyChooseUs from "../components/WhyChooseUs";
 import Testimonials from "../components/Testimonials";
-import CulturalSection from "../components/CulturalSection";
+import CulturalSection from "./CulturalSection";
 import FAQ from "../components/FAQ";
-import Contact from "../components/Contact";
+import Contact from "./Contact";
 import Footer from "../components/Footer";
 
 export default function Home() {
@@ -14,13 +14,13 @@ export default function Home() {
     <div className="font-poppins">
       <Navbar />
       <Hero />
-      <About />
+      {/* <About /> */}
       <Courses />
       <WhyChooseUs />
       <Testimonials />
-      <CulturalSection />
+      {/* <CulturalSection /> */}
       <FAQ />
-      <Contact />
+      {/* <Contact /> */}
       <Footer />
     </div>
   );

@@ -3,6 +3,11 @@ import { useLocation } from "react-router-dom";
 import { Route, Routes } from "react-router-dom";
 import Home from "./pages/HomePage";
 import CourseDetailPage from "./pages/CourseDetailPage";
+import CulturalSection from "./pages/CulturalSection";
+import About from "./pages/About";
+import { Contact } from "lucide-react";
+import ContactPage from "./pages/ContactPage";
+import HomePage from "./pages/HomePage";
 
 function App() {
   const location = useLocation();
@@ -62,8 +67,11 @@ function App() {
   return (
     <div className="font-poppins">
       <Routes>
-        <Route path="/" element={<Home />} />
+        <Route path="/" element={<HomePage />} />
         <Route path="/courses/:id" element={<CourseDetailPage />} />
+        <Route path="/culture" element={<CulturalSection />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/contact" element={<ContactPage />} />
         <Route path="*" element={<p>Page non trouvée</p>} />
       </Routes>
     </div>

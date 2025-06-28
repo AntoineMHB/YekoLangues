@@ -3,6 +3,9 @@ import { useInView } from "react-intersection-observer";
 import { MailIcon, Phone, MapPin } from "lucide-react";
 import emailjs from "@emailjs/browser";
 import toast, { Toaster } from "react-hot-toast";
+import Footer from "../components/Footer";
+import { div } from "framer-motion/client";
+import Navbar from "../components/Navbar";
 
 const Contact: React.FC = () => {
   const { ref, inView } = useInView({
@@ -57,7 +60,26 @@ const Contact: React.FC = () => {
   };
 
   return (
-    <section id="contact" className="section bg-primary-500 text-white">
+    <div className="bg-white">
+      <Navbar />
+
+            <header
+        className="relative h-64 sm:h-80 md:h-96 lg:h-[30rem] flex items-center justify-center text-white"
+        style={{
+          backgroundImage: `linear-gradient(to bottom,rgba(0,0,0,.6),rgba(0,0,0,.6)),url("src/assets/contactImage.jpg")`,
+          backgroundSize: "cover",
+          backgroundPosition: "center 30%",
+        }}
+      >
+        <div className="text-center px-4 max-w-4xl mx-auto">
+          <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-2 leading-tight">
+            Contact
+          </h1>
+          {/* <p className="text-base sm:text-lg md:text-xl">{course.level}</p> */}
+        </div>
+      </header>
+
+     <section id="contact" className="section bg-primary-500 text-white">
       <div className="container px-4">
         <div className="text-center mb-8 sm:mb-12">
           <h2 className="section-title text-white text-xl sm:text-3xl md:text-4xl font-bold mb-2">
@@ -326,6 +348,10 @@ const Contact: React.FC = () => {
       </div>
       <Toaster />
     </section>
+    <Footer />
+   </div>
+   
+ 
   );
 };
 

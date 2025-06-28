@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Link as ScrollLink } from "react-scroll";
-import { Link as RouterLink, useLocation, useNavigate } from "react-router-dom";
+import { Link, Link as RouterLink, useLocation, useNavigate } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 import Logo from "../assets/logo";
 
@@ -32,44 +32,60 @@ const Navbar: React.FC = () => {
   }, []);
 
   const navLinks: NavLinkItem[] = [
-    { name: "Accueil", to: "home" },
+    { name: "Accueil", to: "/" },
+    { name: "Langues", to: "langues" },
+    { name: "Culture", to: "culture" },
+    { name: "Blog", to: "blog" },
     { name: "À propos", to: "about" },
     { name: "Nos cours", to: "courses" },
-    { name: "Pourquoi nous", to: "why-us" },
-    { name: "Témoignages", to: "testimonials" },
+    // { name: "Pourquoi nous", to: "why-us" },
+    // { name: "Témoignages", to: "testimonials" },
     { name: "FAQ", to: "faq" },
     { name: "Contact", to: "contact" },
   ];
 
   const NavLink: React.FC<{ link: NavLinkItem }> = ({ link }) => {
-    if (isHomePage) {
+    // if (isHomePage) {
       return (
-        <ScrollLink
+        // <ScrollLink
+        //   to={link.to}
+        //   spy={true}
+        //   smooth={true}
+        //   offset={-70}
+        //   duration={500}
+        //   className="nav-link cursor-pointer"
+        //   activeClass="active"
+        //   onClick={() => setIsMenuOpen(false)}
+        // >
+        //   {link.name}
+        // </ScrollLink>
+
+        <Link
           to={link.to}
-          spy={true}
-          smooth={true}
-          offset={-70}
-          duration={500}
+          // spy={true}
+          // smooth={true}
+          // offset={-70}
+          // duration={500}
           className="nav-link cursor-pointer"
-          activeClass="active"
+          // activeClass="active"
           onClick={() => setIsMenuOpen(false)}
         >
           {link.name}
-        </ScrollLink>
+        </Link>
       );
-    } else {
-      return (
-        <button
-          className="nav-link cursor-pointer"
-          onClick={() => {
-            setIsMenuOpen(false);
-            navigate("/", { state: { scrollToSection: link.to } });
-          }}
-        >
-          {link.name}
-        </button>
-      );
-    }
+    // } else {
+    //   return (
+    //     <button
+    //       className="nav-link cursor-pointer"
+    //       onClick={() => {
+    //         setIsMenuOpen(false);
+    //         navigate("/", { state: { scrollToSection: link.to } });
+    //       }}
+    //     >
+    //       {link.name}
+    //     </button>
+    //   );
+    // }
   };
 
   const ActionButton = () => {

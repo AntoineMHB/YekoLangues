@@ -247,7 +247,7 @@ const Footer: React.FC = () => {
                   À propos
                 </Link>
               </li>
-              <li>
+              {/* <li>
                 <Link
                   to="courses"
                   spy={true}
@@ -256,6 +256,28 @@ const Footer: React.FC = () => {
                   className="text-gray-400 hover:text-white transition-colors cursor-pointer text-sm sm:text-base"
                 >
                   Nos cours
+                </Link>
+              </li> */}
+              {/* <li>
+                <Link
+                  to="why-us"
+                  spy={true}
+                  smooth={true}
+                  duration={500}
+                  className="text-gray-400 hover:text-white transition-colors cursor-pointer text-sm sm:text-base"
+                >
+                  Pourquoi nous choisir
+                </Link>
+              </li> */}
+              <li>
+                <Link
+                  to="why-us"
+                  spy={true}
+                  smooth={true}
+                  duration={500}
+                  className="text-gray-400 hover:text-white transition-colors cursor-pointer text-sm sm:text-base"
+                >
+                  Langues
                 </Link>
               </li>
               <li>
@@ -266,10 +288,21 @@ const Footer: React.FC = () => {
                   duration={500}
                   className="text-gray-400 hover:text-white transition-colors cursor-pointer text-sm sm:text-base"
                 >
-                  Pourquoi nous choisir
+                  Culture
                 </Link>
               </li>
               <li>
+                <Link
+                  to="why-us"
+                  spy={true}
+                  smooth={true}
+                  duration={500}
+                  className="text-gray-400 hover:text-white transition-colors cursor-pointer text-sm sm:text-base"
+                >
+                  Blog
+                </Link>
+              </li>
+              {/* <li>
                 <Link
                   to="testimonials"
                   spy={true}
@@ -290,7 +323,7 @@ const Footer: React.FC = () => {
                 >
                   FAQ
                 </Link>
-              </li>
+              </li> */}
             </ul>
           </div>
 
@@ -371,10 +404,10 @@ const Footer: React.FC = () => {
         <div className="border-t border-gray-800 pt-6 sm:pt-8 mt-6 sm:mt-8 text-gray-400 text-xs sm:text-sm">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <p>
-              &copy; {new Date().getFullYear()} Yekolangue. Tous droits
+              &copy; {new Date().getFullYear()} YekoLangues. Tous droits
               réservés.
             </p>
-            <div className="flex flex-col sm:flex-row space-y-2 sm:space-y-0 sm:space-x-6 mt-4 sm:mt-0">
+            {/* <div className="flex flex-col sm:flex-row space-y-2 sm:space-y-0 sm:space-x-6 mt-4 sm:mt-0">
               <a href="#" className="hover:text-white transition-colors">
                 Mentions légales
               </a>
@@ -384,7 +417,7 @@ const Footer: React.FC = () => {
               <a href="#" className="hover:text-white transition-colors">
                 CGV
               </a>
-            </div>
+            </div> */}
           </div>
         </div>
       </div>
