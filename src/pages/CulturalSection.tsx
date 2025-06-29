@@ -4,6 +4,7 @@ import { Music, BookOpen, RefreshCw, Play, Pause } from "lucide-react";
 import { div } from "framer-motion/client";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
+import cultureImg from "../assets/cultureImg.jpg";
 
 interface Proverb {
   lingala: string;
@@ -131,7 +132,7 @@ const CulturalSection: React.FC = () => {
             <header
               className="relative h-64 sm:h-80 md:h-96 lg:h-[30rem] flex items-center justify-center text-white"
               style={{
-                backgroundImage: `linear-gradient(to bottom,rgba(0,0,0,.6),rgba(0,0,0,.6)),url("src/assets/cultureImg.jpg")`,
+                backgroundImage: `linear-gradient(to bottom,rgba(0,0,0,.6),rgba(0,0,0,.6)),url(${cultureImg})`,
                 backgroundSize: "cover",
                 backgroundPosition: "center 30%",
               }}

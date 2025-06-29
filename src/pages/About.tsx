@@ -4,6 +4,7 @@ import { Globe, BookOpen, Users, Heart } from "lucide-react";
 import AboutImage from "../assets/about-us-image.jpeg";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
+import aboutImage from "../assets/ylpatterns.png";
 
 const About: React.FC = () => {
   const { ref, inView } = useInView({
@@ -18,7 +19,7 @@ const About: React.FC = () => {
             <header
               className="relative h-64 sm:h-80 md:h-96 lg:h-[30rem] flex items-center justify-center text-white"
               style={{
-                backgroundImage: `linear-gradient(to bottom,rgba(0,0,0,.6),rgba(0,0,0,.6)),url("src/assets/ylpatterns.png")`,
+                backgroundImage: `linear-gradient(to bottom,rgba(0,0,0,.6),rgba(0,0,0,.6)),url(${aboutImage})`,
                 backgroundSize: "cover",
                 backgroundPosition: "center 30%",
               }}

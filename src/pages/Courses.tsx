@@ -6,6 +6,7 @@ import CourseCard from "../components/CourseCard";
 import { div } from "framer-motion/client";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
+import manLearning from "../assets/manLearning.jpg";
 
 const Courses: React.FC = () => {
   const { ref, inView } = useInView({
@@ -20,14 +21,14 @@ const Courses: React.FC = () => {
                   <header
                     className="relative h-64 sm:h-80 md:h-96 lg:h-[30rem] flex items-center justify-center text-white"
                     style={{
-                      backgroundImage: `linear-gradient(to bottom,rgba(0,0,0,.6),rgba(0,0,0,.6)),url("/src/assets/manLearning.jpg")`,
+                      backgroundImage: `linear-gradient(to bottom,rgba(0,0,0,.6),rgba(0,0,0,.6)),url(${manLearning})`,
                       backgroundSize: "cover",
                       backgroundPosition: "center 30%",
                     }}
                   >
                     <div className="text-center px-4 max-w-4xl mx-auto">
                       <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-2 leading-tight">
-                        Apprender le Lingala en ligne
+                        Apprendre le Lingala en ligne
                       </h1>
                     </div>
                   </header>

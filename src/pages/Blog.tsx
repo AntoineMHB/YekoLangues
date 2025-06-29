@@ -4,6 +4,7 @@ import { Music, BookOpen, RefreshCw, Play, Pause } from "lucide-react";
 import { div } from "framer-motion/client";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
+import blogImage from "../assets/blogImage.jpg";
 
 interface Proverb {
   lingala: string;
@@ -18,11 +19,6 @@ interface TrackInfo {
 }
 
 const Blog: React.FC = () => {
-  // const { ref, inView } = useInView({
-  //   triggerOnce: true,
-  //   threshold: 0.1,
-  // });
-
   const [proverbs, setProverbs] = useState<Proverb[]>([]);
   const [currentProverb, setCurrentProverb] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
@@ -131,7 +127,7 @@ const Blog: React.FC = () => {
             <header
               className="relative h-64 sm:h-80 md:h-96 lg:h-[30rem] flex items-center justify-center text-white"
               style={{
-                backgroundImage: `linear-gradient(to bottom,rgba(0,0,0,.6),rgba(0,0,0,.6)),url("src/assets/blogImage.jpg")`,
+                backgroundImage: `linear-gradient(to bottom,rgba(0,0,0,.6),rgba(0,0,0,.6)),url(${blogImage})`,
                 backgroundSize: "cover",
                 backgroundPosition: "center 30%",
               }}
