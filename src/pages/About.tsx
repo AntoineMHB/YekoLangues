@@ -35,7 +35,7 @@ const About: React.FC = () => {
       <div className="container px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-8 sm:mb-10 lg:mb-12">
           <h2 className="section-title text-white text-2xl sm:text-3xl lg:text-4xl">
-            À propos de Yekolangue
+            À propos de YekoLangues
           </h2>
         </div>
 
@@ -56,8 +56,8 @@ const About: React.FC = () => {
           <div className="flex flex-col justify-between order-1 md:order-2">
             <div className="text-justify md:text-left mb-6 sm:mb-8">
               <p className="text-sm sm:text-base lg:text-lg mb-4 sm:mb-5 lg:mb-6 leading-relaxed">
-                Yekolangue est née d'une passion : celle de transmettre la
-                beauté de la langue lingala et de rapprocher les Congolais de
+                YekoLangues est née d'une passion : celle de transmettre la
+                beauté de langues nationales du Congo: Lingala et Swahili et de rapprocher les Congolais de
                 leurs racines culturelles.
               </p>
 
@@ -69,7 +69,7 @@ const About: React.FC = () => {
               </p>
 
               <p className="text-sm sm:text-base lg:text-lg leading-relaxed">
-                Chez Yekolangue, nous allions tradition et modernité pour vous
+                Chez YekoLangues, nous allions tradition et modernité pour vous
                 offrir une expérience d'apprentissage conviviale, efficace et
                 enrichissante.
               </p>

@@ -6,6 +6,7 @@ import toast, { Toaster } from "react-hot-toast";
 import Footer from "../components/Footer";
 import { div } from "framer-motion/client";
 import Navbar from "../components/Navbar";
+import contactImage from "../assets/contactImage.jpg";
 
 const Contact: React.FC = () => {
   const { ref, inView } = useInView({
@@ -66,7 +67,7 @@ const Contact: React.FC = () => {
       <header
         className="relative h-64 sm:h-80 md:h-96 lg:h-[30rem] flex items-center justify-center text-white"
         style={{
-          backgroundImage: `linear-gradient(to bottom,rgba(0,0,0,.6),rgba(0,0,0,.6)),url("src/assets/contactImage.jpg")`,
+          backgroundImage: `linear-gradient(to bottom,rgba(0,0,0,.6),rgba(0,0,0,.6)),url(${contactImage})`,
           backgroundSize: "cover",
           backgroundPosition: "center 30%",
         }}
@@ -75,7 +76,6 @@ const Contact: React.FC = () => {
           <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-2 leading-tight">
             Contact
           </h1>
-          {/* <p className="text-base sm:text-lg md:text-xl">{course.level}</p> */}
         </div>
       </header>
 
