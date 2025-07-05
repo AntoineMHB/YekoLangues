@@ -1,157 +1,158 @@
-import React, { useEffect, useState } from "react";
-import { useInView } from "react-intersection-observer";
-import { Music, BookOpen, RefreshCw, Play, Pause } from "lucide-react";
-import { div } from "framer-motion/client";
+import { useEffect, useState } from "react";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import blogImage from "../assets/blogImage.jpg";
+import { db } from "../../lib/firebase";
+import { collection, getDocs, query, orderBy } from "firebase/firestore";
+import { BookOpen } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 
-interface Proverb {
-  lingala: string;
-  french: string;
-  moral: string;
-}
-
-interface TrackInfo {
-  artist: string;
+type Post = {
+  id: string;
   title: string;
-  lyrics: string;
-}
+  content: string;
+  category: string;
+  imageURL: string;
+};
 
 const Blog: React.FC = () => {
-  const [proverbs, setProverbs] = useState<Proverb[]>([]);
-  const [currentProverb, setCurrentProverb] = useState(0);
-  const [isPaused, setIsPaused] = useState(false);
-  const [accessToken, setAccessToken] = useState<string | null>(null);
-  const [trackInfo, setTrackInfo] = useState<any>(null);
-  const [lyrics, setLyrics] = useState<string>("");
+  const [posts, setPosts] = useState<Post[]>([]);
+  const [loading, setLoading] = useState(true);
+  const navigate = useNavigate();
 
-  // Redirects user to Spotify login
-  const authorize = () => {
-    const clientId = "3f50e625da724aa2886064624c577da9";
-    const redirectUri = "https://yeko-langues.vercel.app/";
-    const scopes = ["user-read-currently-playing", "user-read-playback-state"];
-    const authUrl = `https://accounts.spotify.com/authorize?client_id=${clientId}&response_type=token&redirect_uri=${encodeURIComponent(
-      redirectUri
-    )}&scope=${scopes.join("%20")}`;
-
-    window.location.href = authUrl;
-  };
-
-  // Get token from URL hash
   useEffect(() => {
-    const hash = window.location.hash;
-    if (hash.includes("access_token")) {
-      const token = new URLSearchParams(hash.substring(1)).get("access_token");
-      if (token) {
-        setAccessToken(token);
-        window.history.replaceState(
-          {},
-          document.title,
-          window.location.pathname
-        );
-      }
-    }
-  }, []);
-
-  // Fetch current track and lyrics
-  useEffect(() => {
-    if (!accessToken) return;
-
-    async function fetchTrackAndLyrics() {
+    const fetchPosts = async () => {
       try {
-        const res = await fetch(
-          "https://api.spotify.com/v1/me/player/currently-playing",
-          {
-            headers: {
-              Authorization: `Bearer ${accessToken}`,
-            },
-          }
-        );
-
-        if (!res.ok) throw new Error("No track or not playing");
-
-        const data = await res.json();
-        setTrackInfo(data);
-
-        const artist = data.item?.artists?.[0]?.name;
-        const title = data.item?.name;
-
-        if (artist && title) {
-          const lyricsRes = await fetch(
-            `https://api.lyrics.ovh/v1/${artist}/${title}`
-          );
-          const lyricsData = await lyricsRes.json();
-          setLyrics(lyricsData.lyrics || "Lyrics not found.");
-        }
+        const q = query(collection(db, "posts"), orderBy("createdAt", "desc"));
+        const snapshot = await getDocs(q);
+        const data = snapshot.docs.map((doc) => ({
+          id: doc.id,
+          ...doc.data(),
+        })) as Post[];
+        setPosts(data);
       } catch (error) {
-        console.error("Error fetching track or lyrics:", error);
-        setTrackInfo(null);
-        setLyrics("No lyrics found or no song currently playing.");
+        console.error("Erreur lors du chargement des articles :", error);
+      } finally {
+        setLoading(false);
       }
-    }
+    };
 
-    fetchTrackAndLyrics();
-  }, [accessToken]);
-
-  useEffect(() => {
-    fetch("/lingalaProverbes.json")
-      .then((res) => res.json())
-      .then((data) => {
-        setProverbs(data);
-      })
-      .catch((error) => {
-        console.error("Failed to load proverbs:", error);
-      });
+    fetchPosts();
   }, []);
 
-  // Auto rotate proverbs every 15 seconds
-  useEffect(() => {
-    if (proverbs.length === 0 || isPaused) return;
-
-    const interval = setInterval(() => {
-      setCurrentProverb((prev) => (prev + 1) % proverbs.length);
-    }, 15000); // every 15 seconds
-
-    return () => clearInterval(interval); // Clean up
-  }, [proverbs, isPaused]);
-
-  const rotateProverb = () => {
-    setCurrentProverb((prev) => (prev + 1) % proverbs.length);
+  const getPlainTextSummary = (html: string, maxLength = 150) => {
+    const tempDiv = document.createElement("div");
+    tempDiv.innerHTML = html;
+    const text = tempDiv.textContent || tempDiv.innerText || "";
+    return text.length > maxLength ? text.slice(0, maxLength) + "..." : text;
+  };
+  const handleCardClick = (postId: string) => {
+    navigate(`/blog/${postId}`);
   };
 
   return (
     <div>
       <Navbar />
 
-            <header
-              className="relative h-64 sm:h-80 md:h-96 lg:h-[30rem] flex items-center justify-center text-white"
-              style={{
-                backgroundImage: `linear-gradient(to bottom,rgba(0,0,0,.6),rgba(0,0,0,.6)),url(${blogImage})`,
-                backgroundSize: "cover",
-                backgroundPosition: "center 30%",
-              }}
-            >
-              <div className="text-center px-4 max-w-4xl mx-auto">
-                <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-2 leading-tight">
-                  Blog
-                </h1>
-              </div>
-            </header>
-      
-    <section
-      id="cultural"
-      className="py-12 sm:py-16 lg:py-20 bg-white text-white relative"
-    >
-         <div className="text-center px-4 max-w-4xl mx-auto">
-            <h1 className="text-black text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-2 leading-tight">
-              Nos Actus
-            </h1>
-         </div>
-     </section>
-     <Footer />
-    </div>
+      {/* Hero */}
+      <header
+        className="relative h-64 sm:h-80 md:h-96 lg:h-[30rem] flex items-center justify-center text-white"
+        style={{
+          backgroundImage: `linear-gradient(to bottom,rgba(0,0,0,.6),rgba(0,0,0,.6)),url(${blogImage})`,
+          backgroundSize: "cover",
+          backgroundPosition: "center 30%",
+        }}
+      >
+        <div className="text-center px-4 max-w-4xl mx-auto">
+          <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-2 leading-tight">
+            Blog
+          </h1>
+        </div>
+      </header>
 
+      {/* Posts */}
+      <section className="py-12 sm:py-16 lg:py-20 bg-white text-black">
+        <div className="text-center px-4 max-w-4xl mx-auto mb-10">
+          <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold leading-tight">
+            Nos Articles
+          </h1>
+        </div>
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 px-6 max-w-6xl mx-auto">
+          {loading ? (
+            <p className="text-center col-span-full">Chargement...</p>
+          ) : posts.length === 0 ? (
+            <p className="text-center col-span-full">Aucun article trouvé.</p>
+          ) : (
+            posts.map((post) => (
+              <div
+                key={post.id}
+                className="group bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1 cursor-pointer"
+                onClick={() => handleCardClick(post.id)}
+              >
+                {/* Image section with overlay */}
+                <div className="relative h-48 overflow-hidden">
+                  {post.imageURL && (
+                    <img
+                      src={post.imageURL}
+                      alt={post.title}
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    />
+                  )}
+                  <div className="absolute inset-0 bg-gradient-to-br from-emerald-400 to-teal-500 opacity-20 z-10"></div>
+
+                  {/* Category badge */}
+                  <div className="absolute top-4 left-4 z-20">
+                    <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-white bg-opacity-90 text-emerald-700 shadow-sm">
+                      {post.category}
+                    </span>
+                  </div>
+                </div>
+
+                {/* Content section */}
+                <div className="p-6">
+                  {/* Title with icon */}
+                  <div className="flex items-start mb-3">
+                    <BookOpen
+                      size={20}
+                      className="text-emerald-600 mt-1 mr-3 flex-shrink-0"
+                    />
+                    <h3 className="text-lg font-bold text-gray-800 leading-tight">
+                      {post.title}
+                    </h3>
+                  </div>
+
+                  {/* Content preview */}
+                  <p className="text-gray-600 text-sm leading-relaxed mb-4 line-clamp-3">
+                    {getPlainTextSummary(post.content, 120)}
+                  </p>
+
+                  {/* Read more link */}
+                  <div className="flex items-center text-emerald-600 font-medium text-sm hover:text-emerald-700 transition-colors">
+                    <span>Lire plus</span>
+                    <svg
+                      className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M9 5l7 7-7 7"
+                      />
+                    </svg>
+                  </div>
+                </div>
+              </div>
+            ))
+          )}
+        </div>
+      </section>
+
+      <Footer />
+    </div>
   );
 };
 

@@ -1,21 +1,20 @@
 import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import { Route, Routes } from "react-router-dom";
-import Home from "./pages/HomePage";
 import CourseDetailPage from "./pages/CourseDetailPage";
 import CulturalSection from "./pages/CulturalSection";
 import About from "./pages/About";
-import { Contact } from "lucide-react";
 import ContactPage from "./pages/ContactPage";
 import HomePage from "./pages/HomePage";
 import Blog from "./pages/Blog";
 import Courses from "./pages/Courses";
+import CreateBlogPage from "./pages/admin/CreateBlogPage";
+import BlogPostDetail from "./pages/BlogPostDetail";
 
 function App() {
   const location = useLocation();
 
   useEffect(() => {
-    // Update page title
     document.title = "YekoLangue - Parlez la langue, vivez la culture!";
 
     // Find elements with data-default attribute and remove it if found
@@ -75,8 +74,10 @@ function App() {
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<ContactPage />} />
         <Route path="/blog" element={<Blog />} />
+        <Route path="/blog/:id" element={<BlogPostDetail />} />
         <Route path="/langues/lingala" element={<Courses />} />
         <Route path="*" element={<p>Page non trouvée</p>} />
+        <Route path="/admin/create-blog" element={<CreateBlogPage />} />
       </Routes>
     </div>
   );
