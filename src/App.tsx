@@ -10,6 +10,8 @@ import Blog from "./pages/Blog";
 import Courses from "./pages/Courses";
 import CreateBlogPage from "./pages/admin/CreateBlogPage";
 import BlogPostDetail from "./pages/BlogPostDetail";
+import Login from "./pages/login";
+import ProtectedRoute from "./components/ProtectedRoute";
 
 function App() {
   const location = useLocation();
@@ -77,7 +79,15 @@ function App() {
         <Route path="/blog/:id" element={<BlogPostDetail />} />
         <Route path="/langues/lingala" element={<Courses />} />
         <Route path="*" element={<p>Page non trouvée</p>} />
-        <Route path="/admin/create-blog" element={<CreateBlogPage />} />
+        <Route
+          path="/admin/create-blog"
+          element={
+            <ProtectedRoute>
+              <CreateBlogPage />
+            </ProtectedRoute>
+          }
+        />
+        <Route path="/login" element={<Login />} />
       </Routes>
     </div>
   );
