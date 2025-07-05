@@ -6,11 +6,9 @@ import { ref, uploadBytes, getDownloadURL } from "firebase/storage";
 import "react-quill/dist/quill.snow.css";
 import toast, { Toaster } from "react-hot-toast";
 import { useAuth } from "../../hooks/useAuth";
-import { useNavigate } from "react-router-dom";
 
 const CreateBlogPage = () => {
-  const { user, loading: authLoading, logout } = useAuth();
-  const navigate = useNavigate();
+  const { user, logout } = useAuth();
   const [title, setTitle] = useState("");
   const [content, setContent] = useState("");
   const [category, setCategory] = useState("");
