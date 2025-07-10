@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useInView } from "react-intersection-observer";
 import { Music, BookOpen, RefreshCw, Play, Pause } from "lucide-react";
-import { div } from "framer-motion/client";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import cultureImg from "../assets/cultureImg.jpg";

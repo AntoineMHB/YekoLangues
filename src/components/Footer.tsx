@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-scroll";
 import toast from "react-hot-toast";
-import Logo from "../assets/logo";
+import Logo from "./logo";
 
 const Footer: React.FC = () => {
   const [email, setEmail] = useState("");

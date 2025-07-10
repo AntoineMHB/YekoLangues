@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { Link as ScrollLink } from "react-scroll";
-import { Link, Link as RouterLink, useLocation, useNavigate } from "react-router-dom";
+import { Link as RouterLink, useLocation, useNavigate } from "react-router-dom";
 import { Menu, X } from "lucide-react";
-import Logo from "../assets/logo";
+import Logo from "./logo";
 
 interface NavLinkItem {
   name: string;
@@ -34,8 +34,8 @@ const Navbar: React.FC = () => {
 
   const navLinks: NavLinkItem[] = [
     { name: "Accueil", to: "/" },
-    { 
-      name: "Langues", 
+    {
+      name: "Langues",
       submenu: [
         { name: "Lingala", to: "/langues/lingala" },
         { name: "Swahili", to: "/langues/swahili" },
@@ -44,10 +44,6 @@ const Navbar: React.FC = () => {
     { name: "Culture", to: "/culture" },
     { name: "Blog", to: "/blog" },
     { name: "À propos", to: "/about" },
-    // { name: "Nos cours", to: "/courses" },
-    // { name: "Pourquoi nous", to: "why-us" },
-    // { name: "Témoignages", to: "testimonials" },
-    // { name: "FAQ", to: "faq" },
     { name: "Contact", to: "/contact" },
   ];
 
@@ -55,7 +51,9 @@ const Navbar: React.FC = () => {
     if (link.submenu) {
       return (
         <div className="relative group">
-          <span className="nav-link cursor-pointer px-4 py-2 hover:text-primary">{link.name}</span>
+          <span className="nav-link cursor-pointer px-4 py-2 hover:text-primary">
+            {link.name}
+          </span>
           <div className="absolute left-0 mt-2 w-40 bg-white shadow-lg rounded-md hidden group-hover:block z-50">
             {link.submenu.map((sublink) => (
               <RouterLink
@@ -71,15 +69,15 @@ const Navbar: React.FC = () => {
         </div>
       );
     }
-      return (
-        <RouterLink
-          to={link.to || "#"}
-          className="nav-link cursor-pointer"
-          onClick={() => setIsMenuOpen(false)}
-        >
-          {link.name}
-        </RouterLink>
-      );
+    return (
+      <RouterLink
+        to={link.to || "#"}
+        className="nav-link cursor-pointer"
+        onClick={() => setIsMenuOpen(false)}
+      >
+        {link.name}
+      </RouterLink>
+    );
   };
 
   const ActionButton = () => {
@@ -126,7 +124,6 @@ const Navbar: React.FC = () => {
         </RouterLink>
 
         <div className="hidden md:flex items-center space-x-4">
-
           {navLinks.map((link) => (
             <NavLink key={link.to} link={link} />
           ))}

@@ -44,14 +44,13 @@ const CourseCard: React.FC<CourseCardProps> = ({
       <div
         className={`relative h-32 sm:h-40 lg:h-48 overflow-hidden bg-gradient-to-r ${colorClasses}`}
       >
-        {image && (
-          <img
-            src={image}
-            alt={title}
-            className="w-full h-full object-cover mix-blend-overlay opacity-80 group-hover:scale-105 transition-transform duration-500"
-          />
-        )}
-        <div className="absolute top-2 sm:top-3 lg:top-4 left-2 sm:left-3 lg:left-4 bg-white text-gray-800 px-2 sm:px-3 py-1 rounded-full text-xs sm:text-sm font-medium">
+        <div className="absolute inset-0 bg-black/40 z-10" />
+        <img
+          src={image}
+          alt={title}
+          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+        />
+        <div className="absolute top-2 sm:top-3 lg:top-4 left-2 sm:left-3 lg:left-4 bg-white text-gray-800 px-2 sm:px-3 py-1 rounded-full text-xs sm:text-sm font-medium z-20">
           {level}
         </div>
       </div>
@@ -62,7 +61,7 @@ const CourseCard: React.FC<CourseCardProps> = ({
           <span className="text-sm sm:text-base lg:text-lg">{title}</span>
         </h3>
 
-        <p className="text-gray-600 mb-4 sm:mb-5 lg:mb-6 text-sm lg:text-base text-ellipsis overflow-hidden line-clamp-3 sm:line-clamp-4 lg:h-32">
+        <p className="text-gray-600 mb-4 sm:mb-5 lg:mb-6 text-sm lg:text-base line-clamp-3 sm:line-clamp-5">
           {description}
         </p>
 
