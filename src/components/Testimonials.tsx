@@ -149,7 +149,6 @@ const Testimonials: React.FC = () => {
         </div>
       </div>
 
-      <div className="wave-separator wave-secondary  absolute bottom-0 left-0 right-0"></div>
     </section>
   );
 };

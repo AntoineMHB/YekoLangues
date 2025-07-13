@@ -11,11 +11,15 @@ interface FeatureProps {
 const Feature: React.FC<FeatureProps> = ({ icon, title, description }) => {
   return (
     <div className="bg-primary-50 bg-opacity-10 backdrop-blur-sm rounded-lg p-4 sm:p-6 hover:bg-opacity-20 transition-all duration-300">
-      <div className="w-12 h-12 sm:w-14 sm:h-14 bg-white bg-opacity-20 rounded-full flex items-center justify-center mb-3 sm:mb-4">
-        {icon}
+      <div className="flex items-center justify-start space-x-5">
+        <div className="w-12 h-12 sm:w-14 sm:h-14 bg-white bg-opacity-20 rounded-full flex items-center justify-center space-x-52 mb-3 sm:mb-4">
+         {icon}
+        </div>
+         <h3 className="text-base sm:text-[17.5px] font-bold mb-2 text-white">{title}</h3>
+
       </div>
-      <h3 className="text-lg sm:text-xl font-bold mb-2 text-white">{title}</h3>
-      <p className="text-sm sm:text-base text-gray-200">{description}</p>
+
+               <p className="text-sm sm:text-base text-gray-200">{description}</p>
     </div>
   );
 };
