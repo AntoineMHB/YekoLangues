@@ -1,6 +1,6 @@
 import React from "react";
 import { BookOpen } from "lucide-react";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 interface CourseCardProps {
   id: number;
@@ -9,6 +9,7 @@ interface CourseCardProps {
   description: string;
   image: string;
   color: string;
+  langue: string;
 }
 
 const CourseCard: React.FC<CourseCardProps> = ({
@@ -18,6 +19,7 @@ const CourseCard: React.FC<CourseCardProps> = ({
   description,
   image,
   color,
+  langue,
 }) => {
   const navigate = useNavigate();
   let colorClasses = "";
@@ -39,7 +41,7 @@ const CourseCard: React.FC<CourseCardProps> = ({
   return (
     <div
       className="card h-full group shadow-xl cursor-pointer transition-all duration-300 hover:shadow-2xl hover:-translate-y-2"
-      onClick={() => navigate(`/courses/${id}`)}
+      onClick={() => navigate(`/langues/${langue}/${id}`)}
     >
       <div
         className={`relative h-32 sm:h-40 lg:h-48 overflow-hidden bg-gradient-to-r ${colorClasses}`}
@@ -65,12 +67,9 @@ const CourseCard: React.FC<CourseCardProps> = ({
           {description}
         </p>
 
-        <Link
-          to={`/courses/${id}`}
-          className="mt-auto btn btn-outline w-full text-xs sm:text-sm lg:text-base py-2 sm:py-2.5"
-        >
+        <button className="mt-auto btn btn-outline w-full text-xs sm:text-sm lg:text-base py-2 sm:py-2.5">
           En savoir plus
-        </Link>
+        </button>
       </div>
     </div>
   );

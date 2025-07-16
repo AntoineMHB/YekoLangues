@@ -147,8 +147,21 @@ const Navbar: React.FC = () => {
       </div>
 
       {isMenuOpen && (
-        <div className="md:hidden bg-white shadow-lg absolute w-full py-4 transition-all duration-300 animate-fade-in">
-          <div className="container flex flex-col space-y-4">
+        <div className="md:hidden fixed top-0 left-0 w-full min-h-screen bg-white z-50 shadow-lg p-6">
+          <div className="flex justify-between items-center mb-6">
+            <RouterLink to="/" onClick={() => setIsMenuOpen(false)}>
+              <Logo className="h-10 w-auto" />
+            </RouterLink>
+            <button
+              onClick={() => setIsMenuOpen(false)}
+              className="text-gray-700"
+              aria-label="Fermer le menu"
+            >
+              <X size={28} />
+            </button>
+          </div>
+
+          <div className="flex flex-col space-y-4">
             {navLinks.map((link) => (
               <NavLink key={link.to} link={link} />
             ))}
