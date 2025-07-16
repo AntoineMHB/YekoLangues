@@ -7,7 +7,7 @@ const Hero: React.FC = () => {
   return (
     <section
       id="home"
-      className="relative min-h-screen flex items-center pt-16 bg-hero-pattern bg-cover bg-center sm:bg-right before:content-[''] before:absolute before:inset-0 before:bg-gradient-to-r before:from-black before:to-transparent before:bg-opacity-80"
+      className="relative min-h-screen flex items-center pt-16 bg-hero-pattern bg-cover bg-center sm:bg-right before:content-[''] before:absolute before:inset-0 before:bg-gradient-to-r before:from-black before:to-black sm:before:to-transparent before:opacity-80"
     >
       <div className="container relative z-10 text-white py-12 sm:py-16 md:py-20 px-4 sm:px-6 lg:px-8">
         <motion.div
@@ -55,42 +55,6 @@ const Hero: React.FC = () => {
               Découvrir nos cours
             </Link>
           </div>
-        </motion.div>
-
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 1, duration: 1 }}
-          className=" absolute bottom-8 top-[35rem] sm:bottom-10 left-1/2 transform -translate-x-1/2 hidden lg:block sm:flex"
-        >
-          <Link
-            to="about"
-            spy={true}
-            smooth={true}
-            offset={-70}
-            duration={500}
-            className="flex flex-col items-center cursor-pointer"
-          >
-            <span className="text-sm sm:text-base mb-2 font-semibold">
-              En savoir plus
-            </span>
-            <div className="w-8 h-8 rounded-full border-2 border-white flex items-center justify-center">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-                className="w-4 h-4 animate-bounce-slow"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M19 14l-7 7m0 0l-7-7m7 7V3"
-                />
-              </svg>
-            </div>
-          </Link>
         </motion.div>
       </div>
     </section>

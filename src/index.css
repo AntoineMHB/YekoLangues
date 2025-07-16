@@ -85,30 +85,3 @@
   transform: translateY(0);
 }
 
-/* Custom wave separator */
-.wave-separator {
-  aspect-ratio: 900/100;
-  width: 100%;
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-  display: none;
-}
-
-@media screen and (min-width: 1024px) {
-  .wave-separator {
-    display: block;
-  }
-}
-
-.wave-primary {
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 900 100' width='900' height='100'%3E%3Cpath d='M0 0L900 0 900 100C750 40 150 80 0 20Z' fill='%232D9D78'/%3E%3C/svg%3E");
-}
-
-.wave-secondary {
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 900 100' width='900' height='100'%3E%3Cpath d='M0 0L900 0 900 100C750 40 150 80 0 20Z' fill='%23F26E38'/%3E%3C/svg%3E");
-}
-
-.wave-accent {
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 900 100' width='900' height='100'%3E%3Cpath d='M0 0L900 0 900 100C750 40 150 80 0 20Z' fill='%23F5B82E'/%3E%3C/svg%3E");
-}

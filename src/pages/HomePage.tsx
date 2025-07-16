@@ -12,8 +12,12 @@ export default function Home() {
       <Navbar />
       <Hero />
       <WhyChooseUs />
-      <CourseOffering />
-      <Testimonials />
+
+      {/* <Testimonials /> */}
+
+<!--       <CourseOffering />
+      <Testimonials /> -->
+
       <FAQ />
       <Footer />
     </div>
