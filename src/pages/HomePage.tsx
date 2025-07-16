@@ -1,7 +1,7 @@
 import Navbar from "../components/Navbar";
 import Hero from "../components/Hero";
 import WhyChooseUs from "../components/WhyChooseUs";
-import Testimonials from "../components/Testimonials";
+
 import FAQ from "../components/FAQ";
 import Footer from "../components/Footer";
 
@@ -11,7 +11,6 @@ export default function Home() {
       <Navbar />
       <Hero />
       <WhyChooseUs />
-      {/* <Testimonials /> */}
       <FAQ />
       <Footer />
     </div>
