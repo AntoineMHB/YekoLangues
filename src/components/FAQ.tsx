@@ -113,7 +113,7 @@ const FAQ: React.FC = () => {
 
         <div
           ref={ref}
-          className={`max-w-4xl mx-auto bg-white rounded-xl shadow-lg p-4 sm:p-6 lg:p-8 ${
+          className={`max-w-4xl mx-auto bg-gray-100 rounded-xl shadow-lg p-4 sm:p-6 lg:p-8 ${
             inView ? "animate-on-scroll animated" : "animate-on-scroll"
           }`}
         >
