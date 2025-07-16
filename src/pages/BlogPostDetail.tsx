@@ -161,25 +161,25 @@ const BlogPostDetail = () => {
       </div>
 
       <section className="max-w-6xl mx-auto px-4 py-16">
-        <button
-          onClick={() => navigate("/blog")}
-          className="mb-8 flex items-center text-gray-600 hover:text-emerald-600"
-        >
-          <ArrowLeft size={20} className="mr-2" />
-          Retour au blog
-        </button>
+        <div className="flex justify-between items-center mb-8 flex-wrap gap-4">
+          <button
+            onClick={() => navigate("/blog")}
+            className="flex items-center px-3 py-1.5 sm:px-4 sm:py-2 bg-primary-500/10 text-primary-700 hover:bg-primary-500/25 transition-colors rounded-md font-medium text-sm sm:text-base"
+          >
+            <ArrowLeft size={16} className="mr-2" />
+            Retour au blog
+          </button>
+
+          <button
+            onClick={handleShare}
+            className="flex items-center px-3 py-1.5 sm:px-4 sm:py-2 bg-primary-500/10 text-primary-700 hover:bg-primary-500/25 transition-colors rounded-md font-medium text-sm sm:text-base"
+          >
+            <Share2 size={14} className="mr-2" />
+            Partager
+          </button>
+        </div>
 
         <div className="py-6 sm:py-10 lg:py-12">
-          <div className="flex justify-end mb-8">
-            <button
-              onClick={handleShare}
-              className="flex items-center px-4 py-2 bg-gray-100 hover:bg-gray-200 rounded-lg text-gray-700 transition-colors"
-            >
-              <Share2 size={16} className="mr-2" />
-              Partager
-            </button>
-          </div>
-
           <div
             className="prose prose-lg max-w-none prose-headings:text-gray-800 prose-headings:font-bold prose-p:text-gray-600 prose-p:leading-relaxed prose-a:text-emerald-600 prose-a:no-underline hover:prose-a:underline prose-strong:text-gray-800 prose-ul:text-gray-600 prose-ol:text-gray-600 prose-li:mb-2"
             dangerouslySetInnerHTML={{ __html: post.content }}

@@ -8,7 +8,7 @@ const CourseOfferings: React.FC = () => {
   const [activeTab, setActiveTab] = useState<"lingala" | "swahili">("lingala");
 
   return (
-    <section className="section bg-accent-500">
+    <section className="section bg-accent-500" id="courses">
       <div className="container px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-8 sm:mb-10 lg:mb-12">
           <h2 className="section-title text-white text-2xl sm:text-3xl lg:text-4xl mb-3 sm:mb-4">
