@@ -11,7 +11,7 @@ const Logo: React.FC<LogoProps> = ({ className = "h-10 w-auto" }) => {
       <img
         src={yekoLogo}
         alt="Yeko Langues Logo"
-        className=" w-[100px] h-[100px]"
+        className=" w-[180px] h-[180px] object-contain"
       />
     </div>
   );
