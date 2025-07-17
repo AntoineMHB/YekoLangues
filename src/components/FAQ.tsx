@@ -98,7 +98,7 @@ const FAQ: React.FC = () => {
   return (
     <section
       id="faq"
-      className="py-12 sm:py-16 lg:py-20 bg-accent-500 relative"
+      className="py-12 sm:py-16 lg:py-20 bg-primary-400 relative"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-8 sm:mb-10 lg:mb-12">

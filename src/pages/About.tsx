@@ -467,33 +467,26 @@ const About = () => {
               <p className="mb-4">
                 C’est au début de l’année 2025 que <strong>Jacques</strong> et{" "}
                 <strong>Antoine</strong>, deux jeunes congolais ayant grandi au
-                Congo, réalisent une chose surprenante :
-                <span className="italic">
-                  pour un étranger, parler Lingala, c’est être Congolais
-                </span>
-                . Une prise de conscience née après de nombreuses interactions
-                avec des personnes de différentes nationalités.
+                Congo, réalisent une chose surprenante: pour un étranger, parler
+                Lingala, c’est être Congolais. Une prise de conscience née après
+                de nombreuses interactions avec des personnes de différentes
+                nationalités.
               </p>
 
               <p className="mb-4">
-                De là est née une idée merveilleuse : affirmer son identité
-                congolaise en parlant Lingala . Et pourquoi ne pas aller plus
-                loin ? Offrir à tous les Congolais, notamment ceux ayant grandi
-                loin de la patrie,
-                <span className="italic">
-                  l’opportunité de se reconnecter à leurs origines
-                </span>
-                .
+                De là est née une idée merveilleuse: affirmer son identité
+                congolaise en parlant Lingala. Et pourquoi ne pas aller plus
+                loin? Offrir à tous les Congolais, notamment ceux ayant grandi
+                loin de la patrie, l’opportunité de se reconnecter à leurs
+                origines.
               </p>
 
               <p className="mb-4">
-                Ayant tous deux grandi dans l’est du Congo — une région où le{" "}
-                Swahili est largement parlé —, ils décident naturellement
-                d’ajouter cette langue au projet. Le Swahili,{" "}
-                <span className="italic">
-                  l’une des langues nationales de la RDC
-                </span>
-                , fait ainsi partie intégrante de l’offre de YekoLangues.
+                Ayant tous deux grandi dans l’est du Congo, une région où le{" "}
+                Swahili est largement parlé, ils décident naturellement
+                d’ajouter cette langue au projet. Le Swahili, l’une des langues
+                nationales de la RDC, fait ainsi partie intégrante de l’offre de
+                YekoLangues.
               </p>
             </>
           </BranchSection>

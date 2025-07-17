@@ -12,6 +12,7 @@ export default function Home() {
       <Navbar />
       <Hero />
       <WhyChooseUs />
+      <CourseOffering/>
       <FAQ />
       <Footer />
     </div>
