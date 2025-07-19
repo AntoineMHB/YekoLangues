@@ -74,12 +74,17 @@ const CourseOfferings: React.FC = () => {
                 Prêt à commencer votre voyage linguistique?
               </h3>
               <p className="text-gray-600 mb-4 sm:mb-6 text-sm sm:text-base leading-relaxed">
-                Briser les barrières qui vous bloquent. Retrouvez vos coachs des langues qui vous attendent pour commencer votre voyage luingistique. C'est parti! 
+                Levez les obstacles. Vos coachs vous attendent pour débuter votre voyage linguistique. En route !
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <button className="btn btn-primary text-sm sm:text-base px-6 py-3">
-                  Commencez maintenant
-                </button>
+            <a
+                href="https://calendly.com/contact-yekolangues"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn btn-primary text-base sm:text-lg px-6 sm:px-8 py-3 sm:py-4 shadow-lg hover:shadow-xl transition-all cursor-pointer flex items-center justify-center"
+            >
+                 <span>Commencer maintenant</span>
+            </a>
               </div>
             </div>
           </div>
