@@ -34,7 +34,7 @@ const Hero: React.FC = () => {
 
           <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 mb-20">
             <a
-                href="https://calendly.com/contact-yekolangues/cours-d-essai-gratuit"
+                href="https://calendly.com/contact-yekolangues"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn btn-primary text-base sm:text-lg px-6 sm:px-8 py-3 sm:py-4 shadow-lg hover:shadow-xl transition-all cursor-pointer flex items-center justify-center"
