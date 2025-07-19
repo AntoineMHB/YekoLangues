@@ -74,15 +74,11 @@ const CourseOfferings: React.FC = () => {
                 Prêt à commencer votre voyage linguistique?
               </h3>
               <p className="text-gray-600 mb-4 sm:mb-6 text-sm sm:text-base leading-relaxed">
-                Rejoignez des milliers d'apprenants qui maîtrisent déjà ces
-                langues africaines
+                Briser les barrières qui vous bloquent. Retrouvez vos coachs des langues qui vous attendent pour commencer votre voyage luingistique. C'est parti! 
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <button className="btn btn-primary text-sm sm:text-base px-6 py-3">
-                  Voir tous les cours
-                </button>
-                <button className="border border-gray-300 hover:border-gray-400 text-gray-700 px-6 py-3 rounded-lg font-medium transition-colors duration-200">
-                  Contactez-nous
+                  Commencez maintenant
                 </button>
               </div>
             </div>
