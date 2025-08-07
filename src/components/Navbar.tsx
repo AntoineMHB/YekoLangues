@@ -86,7 +86,7 @@ const Navbar: React.FC = () => {
       return (
         <button
           className="btn btn-primary cursor-pointer"
-          onClick={() => window.open("https://calendly.com/contact-yekolangues", "_blank", "noopener,noreferrer")}
+          onClick={() => window.location.href = "https://calendly.com/contact-yekolangues"}
         >
           Commencer l'apprentissage
         </button>
