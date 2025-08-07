@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-scroll";
 import { ChevronRight } from "lucide-react";
 import { motion } from "framer-motion";
+import Calendly from "./calendly";
 
 const Hero: React.FC = () => {
   return (
@@ -32,17 +33,16 @@ const Hero: React.FC = () => {
           </p>
 
           <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 mb-20">
-            <Link
-              to="start-learning"
-              spy={true}
-              smooth={true}
-              offset={-70}
-              duration={500}
-              className="btn btn-primary text-base sm:text-lg px-6 sm:px-8 py-3 sm:py-4 shadow-lg hover:shadow-xl transition-all cursor-pointer flex items-center justify-center"
+            <a
+                href="https://calendly.com/contact-yekolangues"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn btn-primary text-base sm:text-lg px-6 sm:px-8 py-3 sm:py-4 shadow-lg hover:shadow-xl transition-all cursor-pointer flex items-center justify-center"
             >
-              <span>Commencer votre apprentissage</span>
-              <ChevronRight className="ml-2" size={18} />
-            </Link>
+                 <span>Commencer votre apprentissage</span>
+               <ChevronRight className="ml-2" size={18} />
+            </a>
+
 
             <Link
               to="courses"

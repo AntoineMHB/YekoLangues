@@ -90,11 +90,16 @@ const Courses: React.FC = () => {
                 </h3>
                 <p className="text-gray-600 mb-4 sm:mb-6 text-sm sm:text-base leading-relaxed">
                   Prenez rendez-vous pour un cours d'essai gratuit et découvrez
-                  notre approche unique.
+                  notre approche unique. 
                 </p>
-                <button className="btn btn-primary text-sm sm:text-base px-6 py-3 w-full sm:w-auto">
-                  Réserver un cours d'essai gratuit
-                </button>
+            <a
+                href="https://calendly.com/contact-yekolangues"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn btn-primary text-sm sm:text-base px-6 py-3 w-full sm:w-auto"
+            >
+                 <span>Réserver un cours d'essai gratuit</span>
+            </a>
               </div>
             </div>
           </div>

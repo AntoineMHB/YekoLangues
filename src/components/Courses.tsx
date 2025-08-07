@@ -35,8 +35,7 @@ const Courses: React.FC = () => {
               level={course.level}
               description={course.description}
               image={course.image}
-              color={course.color}
-            />
+              color={course.color} langue={""}            />
           ))}
         </div>
 
