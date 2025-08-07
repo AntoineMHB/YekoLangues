@@ -86,10 +86,7 @@ const Navbar: React.FC = () => {
       return (
         <button
           className="btn btn-primary cursor-pointer"
-          onClick={() => {
-            setIsMenuOpen(false);
-            navigate("https://calendly.com/contact-yekolangues", );
-          }}
+          onClick={() => window.open("https://calendly.com/contact-yekolangues", "_blank", "noopener,noreferrer")}
         >
           Commencer l'apprentissage
         </button>
