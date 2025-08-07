@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { Link as ScrollLink } from "react-scroll";
-import { Link as RouterLink, useLocation, useNavigate } from "react-router-dom";
+import { Link, Link as RouterLink, useLocation, useNavigate } from "react-router-dom";
 import { ChevronRight, Menu, X } from "lucide-react";
 import Logo from "./logo";
+import { button } from "framer-motion/client";
 
 interface NavLinkItem {
   name: string;
@@ -83,25 +84,35 @@ const Navbar: React.FC = () => {
   const ActionButton = () => {
     if (isHomePage) {
       return (
-            <a
-                href="https://calendly.com/contact-yekolangues"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="btn btn-primary text-base sm:text-lg px-6 sm:px-8 py-3 sm:py-4 shadow-lg hover:shadow-xl transition-all cursor-pointer flex items-center justify-center"
-            >
-                 <span>Commencer votre apprentissage</span>
-            </a>
+        <button
+          className="btn btn-primary cursor-pointer"
+          onClick={() => {
+            setIsMenuOpen(false);
+            navigate("https://calendly.com/contact-yekolangues", );
+          }}
+        >
+          Commencer l'apprentissage
+        </button>
+            // <a
+            //     href="https://calendly.com/contact-yekolangues"
+            //     target="_blank"
+            //     rel="noopener noreferrer"
+            //     className="btn btn-primary text-base sm:text-lg px-6 sm:px-8 py-3 sm:py-4 h-12 shadow-lg hover:shadow-xl transition-all cursor-pointer flex items-center justify-center"
+            // >
+            //      <span>Commencer l'apprentissage</span>
+            // </a>
       );
     } else {
       return (
-            <a
-                href="https://calendly.com/contact-yekolangues"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="btn btn-primary text-base sm:text-lg px-6 sm:px-8 py-3 sm:py-4 shadow-lg hover:shadow-xl transition-all cursor-pointer flex items-center justify-center"
-            >
-                 <span>Commencer votre apprentissage</span>
-            </a>
+        <button
+          onClick={() =>
+            window.open("https://calendly.com/contact-yekolangues", "_blank", "noopener,noreferrer")
+          }
+            className=" text-base sm:text-lg px-6 sm:px-8 py-3 sm:py-4 w-56 h-14 shadow-lg hover:shadow-xl transition-all cursor-pointer flex items-center justify-center" 
+        >
+           <span>Commencer l'apprentissage</span>
+        </button>
+
       );
     }
   };
