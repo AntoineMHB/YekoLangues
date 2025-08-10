@@ -73,19 +73,19 @@ const FAQ: React.FC = () => {
       id: 3,
       question: "Que faire si mon niveau ne correspond pas au groupe ?",
       answer:
-        "Nos professeurs sont attentifs aux besoins de chaque étudiant et adaptent leur enseignement en conséquence. Nous pouvons également proposer des ajustements de niveau si nécessaire.",
+        "Nos coachs sont attentifs aux besoins de chaque étudiant et adaptent leur enseignement en conséquence. Nous pouvons également proposer des ajustements de niveau si nécessaire.",
     },
     {
       id: 4,
       question: "Y a-t-il un test pour évaluer mon niveau avant de commencer ?",
       answer:
-        "Oui, nous proposons un test d'évaluation initial gratuit pour déterminer votre niveau de lingala et vous recommander le cours le plus approprié.",
+        "Oui, nous proposons un test d'évaluation initial gratuit pour déterminer votre niveau et vous recommander le cours le plus approprié.",
     },
     {
       id: 5,
       question: "Quelles ressources d'apprentissage sont incluses ?",
       answer:
-        "Nos cours comprennent des supports écrits, des exercices interactifs, des évaluations régulières, des ateliers de discussion et d'écriture, ainsi que des explications audio et vidéo pour faciliter votre compréhension.",
+        "Nos cours comprennent des supports écrits, des ateliers de discussion et d'écriture, ainsi que des explications audio et vidéo pour faciliter votre compréhension.",
     },
     {
       id: 6,
