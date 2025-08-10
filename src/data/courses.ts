@@ -11,8 +11,18 @@ export const courses = {
       id: 1,
       title: "Débutant",
       level: "Niveau 1",
-      description:
-        "Les fondations du lingala. Ce cours est idéal pour ceux qui n'ont aucune connaissance préalable de la langue. Vous apprendrez les bases de la grammaire et du vocabulaire essentiel.",
+      description:[
+        "- Alphabet et pronnciation",
+        "- Salutations et formules de politesse",
+        "- Présentation de soi",
+        "- Nombres et chiffres",
+        "- Jours de la semaine",
+        "- Vocabulaire de base",
+        "- Construire des prases simples",
+        "- Expressions courantes",
+        "- Compréhension orale simple"
+      ],
+        
       image: beginnerImage,
       color: "primary",
       coach: {
@@ -31,8 +41,12 @@ export const courses = {
       id: 2,
       title: "Intermédiaire",
       level: "Niveau 2",
-      description:
-        "Développez votre aisance. Si vous avez déjà quelques notions de lingala, ce niveau vous permettra d'enrichir votre vocabulaire, de maîtriser des structures grammaticales plus complexes.",
+      description:[
+        "- Construction des phrases complexes",
+        "- Utilisation des temps verbaux (passé, présent, futur)",
+        "- Expressions idiomatiques courantes",
+        "- Conversation sur des sujets quotidiens",
+        "- Compréhension orale de dialogues simples"],
       image: intermediateImage,
       color: "secondary",
       coach: {
@@ -51,8 +65,12 @@ export const courses = {
       id: 3,
       title: "Avancé",
       level: "Niveau 3",
-      description:
-        "Maîtrisez la nuance et la culture. Ce cours est conçu pour ceux qui souhaitent perfectionner leur lingala, comprendre les subtilités de la langue et explorer des aspects culturels.",
+      description:[        
+        "- Nuances et subtilités grammaticales",
+        "- Compréhension de textes et discours complexes",
+        "- Expression d’opinions et argumentation",
+        "- Vocabulaire spécialisé (affaires, culture, etc.)",
+        "- Maîtrise des expressions avancées"],
       image: advancedImage,
       color: "accent",
       coach: {
@@ -74,8 +92,8 @@ export const courses = {
       id: 4,
       title: "Kiwango cha Kwanza",
       level: "Niveau 1",
-      description:
-        "Msingi wa Kiswahili. Kozi hii ni kwa wale wanaoanza kujifunza Kiswahili. Utajifunza msamiati wa msingi, sarufi na matamshi sahihi.",
+      description: [
+        "Msingi wa Kiswahili. Kozi hii ni kwa wale wanaoanza kujifunza Kiswahili. Utajifunza msamiati wa msingi, sarufi na matamshi sahihi."],
       image: beginnerImage,
       color: "primary",
       coach: {
@@ -95,7 +113,7 @@ export const courses = {
       title: "Kiwango cha Pili",
       level: "Niveau 2",
       description:
-        "Imarisha Kiswahili chako. Kozi hii inakufundisha misingi ya kisarufi ya kati na msamiati mpana kwa mazungumzo yenye ufasaha.",
+       [ "Imarisha Kiswahili chako. Kozi hii inakufundisha misingi ya kisarufi ya kati na msamiati mpana kwa mazungumzo yenye ufasaha."],
       image: intermediateImage,
       color: "secondary",
       coach: {
@@ -115,7 +133,7 @@ export const courses = {
       title: "Kiwango cha Juu",
       level: "Niveau 3",
       description:
-        "Tathmini ya Kiswahili cha kitaalamu. Kozi hii inakusaidia kuelewa mitindo ya lugha, fasihi na muktadha wa kijamii na kitamaduni.",
+        ["Tathmini ya Kiswahili cha kitaalamu. Kozi hii inakusaidia kuelewa mitindo ya lugha, fasihi na muktadha wa kijamii na kitamaduni."],
       image: advancedImage,
       color: "accent",
       coach: {

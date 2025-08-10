@@ -2,12 +2,22 @@ import React from "react";
 import { useInView } from "react-intersection-observer";
 import CourseCard from "./CourseCard";
 import { courses } from "../data/courses";
+import { ul } from "framer-motion/client";
+import { useParams } from "react-router-dom";
 
 const Courses: React.FC = () => {
+  const { language, id } = useParams();
   const { ref, inView } = useInView({
     triggerOnce: true,
     threshold: 0.1,
   });
+
+    const languageLabelMap: Record<string, string> = {
+    lingala: "Lingala",
+    swahili: "Swahili",
+  };
+
+  const langLabel = languageLabelMap[language ?? ""] ?? "langue";
 
   return (
     <section id="courses" className="section bg-accent-500">
@@ -27,13 +37,19 @@ const Courses: React.FC = () => {
             inView ? "animate-on-scroll animated" : "animate-on-scroll"
           }`}
         >
-          {courses.map((course) => (
+          {courses.lingala.map((course: any) => (
             <CourseCard
               id={course.id}
               key={course.id}
               title={course.title}
               level={course.level}
-              description={course.description}
+              description={
+                <ul>
+                  {course.description.map((item: string, index: number) => (
+                    <li key={index}>{item}</li>
+                  ))}
+                </ul>
+              }
               image={course.image}
               color={course.color} langue={""}            />
           ))}

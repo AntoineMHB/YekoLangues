@@ -86,18 +86,10 @@ const Navbar: React.FC = () => {
       return (
         <button
           className="btn btn-primary cursor-pointer"
-          onClick={() => window.open("https://calendly.com/contact-yekolangues", "_blank", "noopener,noreferrer")}
+          onClick={() => window.location.href = "https://calendly.com/contact-yekolangues"}
         >
           Commencer l'apprentissage
         </button>
-            // <a
-            //     href="https://calendly.com/contact-yekolangues"
-            //     target="_blank"
-            //     rel="noopener noreferrer"
-            //     className="btn btn-primary text-base sm:text-lg px-6 sm:px-8 py-3 sm:py-4 h-12 shadow-lg hover:shadow-xl transition-all cursor-pointer flex items-center justify-center"
-            // >
-            //      <span>Commencer l'apprentissage</span>
-            // </a>
       );
     } else {
       return (
@@ -105,7 +97,7 @@ const Navbar: React.FC = () => {
           onClick={() =>
             window.open("https://calendly.com/contact-yekolangues", "_blank", "noopener,noreferrer")
           }
-            className=" text-base sm:text-lg px-6 sm:px-8 py-3 sm:py-4 w-56 h-14 shadow-lg hover:shadow-xl transition-all cursor-pointer flex items-center justify-center" 
+            className="btn btn-primary cursor-pointer" 
         >
            <span>Commencer l'apprentissage</span>
         </button>

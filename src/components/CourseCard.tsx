@@ -6,7 +6,7 @@ interface CourseCardProps {
   id: number;
   title: string;
   level: string;
-  description: string;
+  description: React.ReactNode;
   image: string;
   color: string;
   langue: string;
@@ -39,10 +39,7 @@ const CourseCard: React.FC<CourseCardProps> = ({
   }
 
   return (
-    <div
-      className="card h-full group shadow-xl cursor-pointer transition-all duration-300 hover:shadow-2xl hover:-translate-y-2"
-      onClick={() => navigate(`/langues/${langue}/${id}`)}
-    >
+    <div className="card h-full group shadow-xl cursor-pointer transition-all duration-300 hover:shadow-2xl hover:-translate-y-2">
       <div
         className={`relative h-32 sm:h-40 lg:h-48 overflow-hidden bg-gradient-to-r ${colorClasses}`}
       >
@@ -63,13 +60,9 @@ const CourseCard: React.FC<CourseCardProps> = ({
           <span className="text-sm sm:text-base lg:text-lg">{title}</span>
         </h3>
 
-        <p className="text-gray-600 mb-4 sm:mb-5 lg:mb-6 text-sm lg:text-base line-clamp-3 sm:line-clamp-5">
+        <div className="text-gray-600 mb-4 sm:mb-5 lg:mb-6 text-sm lg:text-base">
           {description}
-        </p>
-
-        <button className="mt-auto btn btn-outline w-full text-xs sm:text-sm lg:text-base py-2 sm:py-2.5">
-          En savoir plus
-        </button>
+        </div>
       </div>
     </div>
   );
