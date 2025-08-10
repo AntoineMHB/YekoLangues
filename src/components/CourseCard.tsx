@@ -63,10 +63,6 @@ const CourseCard: React.FC<CourseCardProps> = ({
         <div className="text-gray-600 mb-4 sm:mb-5 lg:mb-6 text-sm lg:text-base">
           {description}
         </div>
-
-        {/* <button className="mt-auto btn btn-outline w-full text-xs sm:text-sm lg:text-base py-2 sm:py-2.5">
-          En savoir plus
-        </button> */}
       </div>
     </div>
   );

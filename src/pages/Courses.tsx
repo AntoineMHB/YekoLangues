@@ -167,9 +167,11 @@ const Courses: React.FC = () => {
                       </ul>
                     </div>
 
-                    <button className="w-full bg-white text-gray-700 hover:bg-white hover:bg-opacity-80 py-3 rounded-md transition duration-300 font-medium text-sm sm:text-base">
-                      S'abonner maintenant
-                    </button>
+                    <Link to={"https://calendly.com/contact-yekolangues"}>
+                      <button className="hover:scale-95 w-full bg-white text-gray-700 hover:bg-white hover:bg-opacity-80 py-3 rounded-md transition duration-300 font-medium text-sm sm:text-base">
+                        S'abonner maintenant
+                      </button>
+                    </Link>
                   </div>
                 </div>
               </section>
@@ -198,25 +200,23 @@ const Courses: React.FC = () => {
             >
               {selectedCourses.length > 0 ? (
                 selectedCourses.map((course) => (
-                  <Link key={course.id} to={`/langues/${langue}/${course.id}`}>
-                    <CourseCard
-                      id={course.id}
-                      title={course.title}
-                      level={course.level}
-                      description={
-                        <ul>
-                          {course.description.map(
-                            (item: string, index: number) => (
-                              <li key={index}>{item}</li>
-                            )
-                          )}
-                        </ul>
-                      }
-                      image={course.image}
-                      color={course.color}
-                      langue={langue}
-                    />
-                  </Link>
+                  <CourseCard
+                    id={course.id}
+                    title={course.title}
+                    level={course.level}
+                    description={
+                      <ul>
+                        {course.description.map(
+                          (item: string, index: number) => (
+                            <li key={index}>{item}</li>
+                          )
+                        )}
+                      </ul>
+                    }
+                    image={course.image}
+                    color={course.color}
+                    langue={langue}
+                  />
                 ))
               ) : (
                 <p className="text-white col-span-full text-center">
