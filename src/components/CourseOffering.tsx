@@ -23,7 +23,7 @@ const CourseOfferings: React.FC = () => {
           </p>
         </div>
 
-        <div className="flex items-center justify-center mb-8">
+        <div className="flex flex-col md:flex-row items-center justify-center mb-8">
           <div className="relative z-[10] overflow-hidden rounded-none transition-transform duration-500 hover:scale-110 hover:-rotate-x-6 perspective-[1000px]">
             <a
               href="/langues/lingala"
@@ -40,7 +40,7 @@ const CourseOfferings: React.FC = () => {
                 }}
               ></div>
 
-              <div className="relative z-10 text-center p-6 pt-28 w-4/6 mx-auto">
+              <div className="relative z-10 text-center p-6 pt-28 md:w-4/6 sm:w-3/4 mx-auto">
                 <h2 className="text-justify text-5xl font-extrabold text-white">
                   Apprendre le
                 </h2>
@@ -72,7 +72,7 @@ const CourseOfferings: React.FC = () => {
                 }}
               ></div>
 
-              <div className="relative z-10 text-center p-6 pt-28 w-4/6 mx-auto">
+              <div className="relative z-10 text-center p-6 pt-28 md:w-4/6 sm:w-3/4 mx-auto">
                 <h2 className="text-justify text-5xl font-extrabold text-white">
                   Apprendre le
                 </h2>
