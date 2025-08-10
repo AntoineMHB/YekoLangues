@@ -82,7 +82,7 @@ const CourseOfferings: React.FC = () => {
 
           <div className="relative z-[100] overflow-hidden rounded-none transition-transform duration-500 hover:scale-105 hover:-rotate-x-6 perspective-[1000px]">
             <a
-              href="/langues/lingala"
+              href="/langues/swahili"
               className="absolute z-[100] top-[1px] left-[1px] h-[calc(100%-2px)] w-[calc(100%-2px)] block"
             ></a>
 

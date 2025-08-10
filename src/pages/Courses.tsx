@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import { useInView } from "react-intersection-observer";
 import { courses } from "../data/courses";
@@ -6,6 +6,7 @@ import CourseCard from "../components/CourseCard";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import manLearning from "../assets/manLearning.jpg";
+import blackWomanLearning from "../assets/blackWomanLearning.jpg";
 import ComingSoon from "../components/ComingSoon";
 import { useCourse } from "../hooks/useCourse";
 import { useTheCourse } from "../hooks/useTheCourse";
@@ -28,6 +29,11 @@ const Courses: React.FC = () => {
     swahili: "Apprendre le Swahili en ligne",
   };
 
+  const headerImageMap: Record<string, { src: string }> = {
+    lingala: { src: manLearning },
+    swahili: { src: blackWomanLearning },
+  };
+
   const languageLabelMap: Record<string, string> = {
     lingala: "Lingala",
     swahili: "Swahili",
@@ -42,7 +48,7 @@ const Courses: React.FC = () => {
       <header
         className="relative h-64 sm:h-80 md:h-96 lg:h-[30rem] flex items-center justify-center text-white"
         style={{
-          backgroundImage: `linear-gradient(to bottom,rgba(0,0,0,.6),rgba(0,0,0,.6)),url(${manLearning})`,
+          backgroundImage: `linear-gradient(to bottom,rgba(0,0,0,.6),rgba(0,0,0,.6)),url(${headerImageMap[langue].src})`,
           backgroundSize: "cover",
           backgroundPosition: "center 30%",
         }}
