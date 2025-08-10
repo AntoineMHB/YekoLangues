@@ -23,11 +23,11 @@ const CourseOfferings: React.FC = () => {
           </p>
         </div>
 
-        <div className="flex items-center justify-center mb-8 gap-5">
-          <div className="relative z-[100] overflow-hidden rounded-none transition-transform duration-500 hover:scale-105 hover:-rotate-x-6 perspective-[1000px]">
+        <div className="flex items-center justify-center mb-8">
+          <div className="relative z-[10] overflow-hidden rounded-none transition-transform duration-500 hover:scale-110 hover:-rotate-x-6 perspective-[1000px]">
             <a
               href="/langues/lingala"
-              className="absolute z-[100] top-[1px] left-[1px] h-[calc(100%-2px)] w-[calc(100%-2px)] block"
+              className="absolute z-[10] top-[1px] left-[1px] h-[calc(100%-2px)] w-[calc(100%-2px)] block"
             ></a>
 
             <div className="relative min-h-[500px]">
@@ -40,11 +40,14 @@ const CourseOfferings: React.FC = () => {
                 }}
               ></div>
 
-              <div className="relative z-10 text-center p-6 pt-32">
-                <h2 className="text-3xl font-bold text-white">
-                  Apprendre le Lingala
+              <div className="relative z-10 text-center p-6 pt-28 w-4/6 mx-auto">
+                <h2 className="text-justify text-5xl font-extrabold text-white">
+                  Apprendre le
                 </h2>
-                <h5 className="mt-2 text-base font-medium text-white/80 max-w-96 mx-auto text-justify pt-20">
+                <h2 className="text-justify text-5xl font-extrabold text-white pt-5">
+                  Lingala
+                </h2>
+                <h5 className="mt-2 text-base font-bold text-white/80 mx-auto text-justify pt-10">
                   Parlé au cœur de l’Afrique centrale, le lingala est une langue
                   vivante et riche en culture. Apprenez à la maîtriser grâce à
                   nos cours conçus pour tous les niveaux.
@@ -53,10 +56,10 @@ const CourseOfferings: React.FC = () => {
             </div>
           </div>
 
-          <div className="relative z-[100] overflow-hidden rounded-none transition-transform duration-500 hover:scale-105 hover:-rotate-x-6 perspective-[1000px]">
+          <div className="relative z-[10] overflow-hidden rounded-none transition-transform duration-500 hover:scale-110 hover:-rotate-x-6 perspective-[1000px]">
             <a
               href="/langues/swahili"
-              className="absolute z-[100] top-[1px] left-[1px] h-[calc(100%-2px)] w-[calc(100%-2px)] block"
+              className="absolute z-[10] top-[1px] left-[1px] h-[calc(100%-2px)] w-[calc(100%-2px)] block"
             ></a>
 
             <div className="relative min-h-[500px]">
@@ -69,11 +72,14 @@ const CourseOfferings: React.FC = () => {
                 }}
               ></div>
 
-              <div className="relative z-10 text-center p-6 pt-32">
-                <h2 className="text-3xl font-bold text-white">
-                  Apprendre le Swahili
+              <div className="relative z-10 text-center p-6 pt-28 w-4/6 mx-auto">
+                <h2 className="text-justify text-5xl font-extrabold text-white">
+                  Apprendre le
                 </h2>
-                <h5 className="mt-2 text-base font-medium text-white/80 max-w-96 text-justify mx-auto pt-20">
+                <h2 className="text-justify text-5xl font-extrabold text-white pt-5">
+                  Swahili
+                </h2>
+                <h5 className="mt-2 text-base font-bold text-white/80 mx-auto text-justify pt-10">
                   Découvrez le swahili, l’une des langues les plus parlées
                   d’Afrique de l’Est et la plus parlée en Afrique. Progressez à
                   votre rythme grâce à nos cours adaptés à tous les niveaux.
