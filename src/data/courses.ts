@@ -11,18 +11,18 @@ export const courses = {
       id: 1,
       title: "Débutant",
       level: "Niveau 1",
-      description:[
-        "- Alphabet et pronnciation",
-        "- Salutations et formules de politesse",
-        "- Présentation de soi",
-        "- Nombres et chiffres",
-        "- Jours de la semaine",
-        "- Vocabulaire de base",
-        "- Construire des prases simples",
-        "- Expressions courantes",
-        "- Compréhension orale simple"
+      description: [
+        ". Alphabet et pronnciation",
+        ". Salutations et formules de politesse",
+        ". Présentation de soi",
+        ". Nombres et chiffres",
+        ". Jours de la semaine",
+        ". Vocabulaire de base",
+        ". Construire des prases simples",
+        ". Expressions courantes",
+        ". Compréhension orale simple",
       ],
-        
+
       image: beginnerImage,
       color: "primary",
       coach: {
@@ -41,12 +41,13 @@ export const courses = {
       id: 2,
       title: "Intermédiaire",
       level: "Niveau 2",
-      description:[
-        "- Construction des phrases complexes",
-        "- Utilisation des temps verbaux (passé, présent, futur)",
-        "- Expressions idiomatiques courantes",
-        "- Conversation sur des sujets quotidiens",
-        "- Compréhension orale de dialogues simples"],
+      description: [
+        ". Construction des phrases complexes",
+        ". Utilisation des temps verbaux (passé, présent, futur)",
+        ". Expressions idiomatiques courantes",
+        ". Conversation sur des sujets quotidiens",
+        ". Compréhension orale de dialogues simples",
+      ],
       image: intermediateImage,
       color: "secondary",
       coach: {
@@ -65,12 +66,13 @@ export const courses = {
       id: 3,
       title: "Avancé",
       level: "Niveau 3",
-      description:[        
-        "- Nuances et subtilités grammaticales",
-        "- Compréhension de textes et discours complexes",
-        "- Expression d’opinions et argumentation",
-        "- Vocabulaire spécialisé (affaires, culture, etc.)",
-        "- Maîtrise des expressions avancées"],
+      description: [
+        ". Nuances et subtilités grammaticales",
+        ". Compréhension de textes et discours complexes",
+        ". Expression d’opinions et argumentation",
+        ". Vocabulaire spécialisé (affaires, culture, etc.)",
+        ". Maîtrise des expressions avancées",
+      ],
       image: advancedImage,
       color: "accent",
       coach: {
@@ -93,7 +95,8 @@ export const courses = {
       title: "Kiwango cha Kwanza",
       level: "Niveau 1",
       description: [
-        "Msingi wa Kiswahili. Kozi hii ni kwa wale wanaoanza kujifunza Kiswahili. Utajifunza msamiati wa msingi, sarufi na matamshi sahihi."],
+        "Msingi wa Kiswahili. Kozi hii ni kwa wale wanaoanza kujifunza Kiswahili. Utajifunza msamiati wa msingi, sarufi na matamshi sahihi.",
+      ],
       image: beginnerImage,
       color: "primary",
       coach: {
@@ -112,8 +115,9 @@ export const courses = {
       id: 5,
       title: "Kiwango cha Pili",
       level: "Niveau 2",
-      description:
-       [ "Imarisha Kiswahili chako. Kozi hii inakufundisha misingi ya kisarufi ya kati na msamiati mpana kwa mazungumzo yenye ufasaha."],
+      description: [
+        "Imarisha Kiswahili chako. Kozi hii inakufundisha misingi ya kisarufi ya kati na msamiati mpana kwa mazungumzo yenye ufasaha.",
+      ],
       image: intermediateImage,
       color: "secondary",
       coach: {
@@ -132,8 +136,9 @@ export const courses = {
       id: 6,
       title: "Kiwango cha Juu",
       level: "Niveau 3",
-      description:
-        ["Tathmini ya Kiswahili cha kitaalamu. Kozi hii inakusaidia kuelewa mitindo ya lugha, fasihi na muktadha wa kijamii na kitamaduni."],
+      description: [
+        "Tathmini ya Kiswahili cha kitaalamu. Kozi hii inakusaidia kuelewa mitindo ya lugha, fasihi na muktadha wa kijamii na kitamaduni.",
+      ],
       image: advancedImage,
       color: "accent",
       coach: {

@@ -96,7 +96,7 @@ const Courses: React.FC = () => {
                     </h4>
                   </div>
 
-                  <div className="bg-emerald-700 text-white rounded-lg shadow-lg p-4 sm:p-6 border border-gray-100 order-1 lg:order-2">
+                  <div className="bg-emerald-700 text-white rounded-lg shadow-lg p-4 sm:p-6  order-1 lg:order-2">
                     <div className="flex items-start mb-4 justify-start">
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
