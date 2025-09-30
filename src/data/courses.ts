@@ -4,6 +4,7 @@ import advancedImage from "../assets/advanced.png";
 import beginnerCoach from "../assets/coach-1.jpeg";
 import intermediateCoach from "../assets/coach-2.jpeg";
 import advancedCoach from "../assets/coach-3.png";
+import antoineCoach from "../assets/antoine.jpg";
 
 export const courses = {
   lingala: [
@@ -100,9 +101,9 @@ export const courses = {
       image: beginnerImage,
       color: "primary",
       coach: {
-        image: beginnerCoach,
-        firstName: "Amina",
-        lastName: "Mokili",
+        image: antoineCoach,
+        firstName: "Antoine",
+        lastName: "NZANZU",
       },
       learningOutcomes: [
         "Msamiati wa kila siku na misemo ya kawaida",
