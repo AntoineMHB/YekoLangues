@@ -62,7 +62,9 @@ const Courses: React.FC = () => {
         </div>
       </header>
 
-  
+      {/* {langue === "swahila" ? (
+        <ComingSoon />
+      ) : ( */}
       <section id="courses" className="section bg-accent-500">
         <div className="container px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-[10px] sm:mb-[10px] lg:mb-[10px">
@@ -81,7 +83,6 @@ const Courses: React.FC = () => {
                     <h2 className="text-sm sm:text-lg font-bold uppercase">
                       NOTRE PROGRAMME
                     </h2>
-
                   </div>
                   <h3 className="text-xl sm:text-2xl md:text-3xl font-bold mb-4 sm:mb-6 leading-tight text-white text-justify">
                     Un programme de {langLabel} adapté à tous les niveaux
@@ -216,29 +217,6 @@ const Courses: React.FC = () => {
             )}
           </div>
 
-
-            <section className=" text-white py-12 sm:py-16 w-full pt-20">
-              <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div className="grid lg:grid-cols-2 gap-8 sm:gap-10 items-center">
-                  <div className="order-2 lg:order-1">
-                    <div className="rounded-lg overflow-hidden h-64 sm:h-80 md:h-96 lg:h-[35rem] w-full max-w-sm mx-auto lg:max-w-none lg:w-[30rem] pt-8 sm:pt-12 lg:pt-16">
-                      <img
-                        src={course?.coach.image}
-                        alt={`Coach de ${langLabel}`}
-                        className="w-full h-full object-cover"
-                      />
-                    </div>
-                    <div className="text-center lg:text-center mt-4">
-                      <p className="text-sm sm:text-base font-semibold">
-                        Coach de {langLabel}
-                      </p>
-                      <p className="text-xl sm:text-2xl font-bold">
-                        {`${
-                          course?.coach.firstName
-                        } ${course?.coach.lastName.toLocaleUpperCase()}`}
-                      </p>
-                    </div>
-
           <section className=" text-white py-12 sm:py-16 w-full shadow-2xl pt-20">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
               <div className="grid lg:grid-cols-2 gap-8 sm:gap-10 items-center">
@@ -249,7 +227,6 @@ const Courses: React.FC = () => {
                       alt={`Coach de ${langLabel}`}
                       className="w-full h-full object-cover"
                     />
-
                   </div>
                   <div className="text-center lg:text-center mt-4">
                     <p className="text-sm sm:text-base font-semibold">

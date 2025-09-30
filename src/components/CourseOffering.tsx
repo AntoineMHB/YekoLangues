@@ -23,7 +23,7 @@ const CourseOfferings: React.FC = () => {
           </p>
         </div>
 
-        <div className="flex flex-col gap-5 md:flex-row items-center justify-center mb-8">
+        <div className="flex flex-col md:flex-row items-center justify-center mb-8">
           <div className="relative z-[10] overflow-hidden rounded-none transition-transform duration-500 hover:scale-110 hover:-rotate-x-6 perspective-[1000px]">
             <a
               href="/langues/lingala"
