@@ -62,9 +62,10 @@ const Courses: React.FC = () => {
         </div>
       </header>
 
+
       <section id="courses" className="section bg-accent-500">
         <div className="container px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-[10px] sm:mb-[10px] lg:mb-[10px">
+          <div className="text-center mb-[10px] sm:mb-[10px] lg:mb-[10px]">
             {/* <h2 className="section-title text-white text-2xl sm:text-3xl lg:text-4xl mb-3 sm:mb-4">
                 Nos offres de cours
               </h2> */}
@@ -80,6 +81,7 @@ const Courses: React.FC = () => {
                     <h2 className="text-sm sm:text-lg font-bold uppercase">
                       NOTRE PROGRAMME
                     </h2>
+
                   </div>
                   <h3 className="text-xl sm:text-2xl md:text-3xl font-bold mb-4 sm:mb-6 leading-tight text-white text-justify">
                     Un programme de {langLabel} adapté à tous les niveaux
@@ -214,6 +216,9 @@ const Courses: React.FC = () => {
             )}
           </div>
 
+
+           
+
           <section className=" text-white py-12 sm:py-16 w-full shadow-2xl pt-20">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
               <div className="grid lg:grid-cols-2 gap-8 sm:gap-10 items-center">
@@ -224,6 +229,7 @@ const Courses: React.FC = () => {
                       alt={`Coach de ${langLabel}`}
                       className="w-full h-full object-cover"
                     />
+
                   </div>
                   <div className="text-center lg:text-center mt-4">
                     <p className="text-sm sm:text-base font-semibold">
