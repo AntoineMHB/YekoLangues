@@ -62,9 +62,6 @@ const Courses: React.FC = () => {
         </div>
       </header>
 
-      {/* {langue === "swahila" ? (
-        <ComingSoon />
-      ) : ( */}
       <section id="courses" className="section bg-accent-500">
         <div className="container px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-[10px] sm:mb-[10px] lg:mb-[10px">
