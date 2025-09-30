@@ -62,7 +62,7 @@ const Courses: React.FC = () => {
         </div>
       </header>
 
-      {langue === "swahili" ? (
+      {langue === "swahila" ? (
         <ComingSoon />
       ) : (
         <section id="courses" className="section bg-accent-500">
